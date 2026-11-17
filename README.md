@@ -21,9 +21,9 @@ And more…
 
 ## Download and set up
 
-The Windows app ZIP will appear on [GitHub Releases](https://github.com/BenDore1810/UmaPresence/releases) when the prerelease is published. See [BUILD.md](BUILD.md) if you want to build from source.
+Download the Windows app ZIP from the [public prerelease](https://github.com/BenDore1810/UmaPresence/releases/tag/v0.1.0-beta.1). See [BUILD.md](BUILD.md) if you want to build from source.
 
-This build is a release candidate. See `acceptance.json` in the app ZIP for the checks that are still pending.
+This prerelease uses manual updates from GitHub Releases. See `acceptance.json` in the app ZIP for the checks that are still pending.
 
 1. Extract the entire app ZIP into a new writable folder and run `UmaPresence.exe`. The app requires Windows x64 and .NET Framework 4.8.
 2. On first launch, choose **Set up game integration** to confirm the detected game folder, or **Skip for now** to open Overview. Use **Browse…** in Game integration if the folder is blank or you want a different folder. Steam and Global are unsupported.
