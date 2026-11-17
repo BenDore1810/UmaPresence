@@ -1,0 +1,67 @@
+{
+  "repository": "https://github.com/kairusds/Hachimi-Edge",
+  "commit": "3c48a46925a8f943a80515877a52309e447d2c7f",
+  "license": "GPL-3.0",
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "path": "src/core/live_utils.rs",
+      "sha256": "08b2ebac3a6fdacade02e1aae3dcf8cf5c351db15f5ac0479ca116c7e2c5ba34"
+    },
+    {
+      "path": "src/il2cpp/hook/CriMw_CriWare_Runtime/CriAtomExPlayer.rs",
+      "sha256": "5a808a5af7a3790ed8834e426df44364adacc75b85687a760a9ea279b09b2398"
+    },
+    {
+      "path": "src/il2cpp/hook/Cute_Cri_Assembly/AtomSourceEx.rs",
+      "sha256": "3ae8d9e3a2afe6004b131e7e25c2c02de94d42e30f651326840cce1d48b9ed71"
+    },
+    {
+      "path": "src/il2cpp/hook/Cute_Cri_Assembly/AudioPlayback.rs",
+      "sha256": "71634c3890be7b6b31e1f831cbdc97975c7f651500cd38d64942efa9d03ac5bc"
+    },
+    {
+      "path": "src/il2cpp/hook/Cute_Cri_Assembly/CuteAudioSource.rs",
+      "sha256": "85c89293d66e0aa37cdd30a32f513ee7122d31e9761747030708cc0db7ee4a20"
+    },
+    {
+      "path": "src/il2cpp/hook/Cute_Cri_Assembly/CuteAudioSourcePool.rs",
+      "sha256": "4892c45e565af56bf539224102bca81d132878ee0bfc5e2880d4f9bb43bd866d"
+    },
+    {
+      "path": "src/il2cpp/hook/umamusume/AudioManager.rs",
+      "sha256": "49ce8164b1c47cb024766da463c6199f079e2f52e93fc4c5c8e5225eed056a1d"
+    },
+    {
+      "path": "src/il2cpp/hook/umamusume/LiveTheaterCharaSelect.rs",
+      "sha256": "e4e2e64b664e65b9fb5679f14ec67aebf64863aa2f978eae5d73a3d5e68ed6ea"
+    },
+    {
+      "path": "src/il2cpp/hook/umamusume/LiveTimeController.rs",
+      "sha256": "7e11f7166e68530c388d92d2e1aefe1ec39b411d8dd99ce4b621aaf0913f09e6"
+    },
+    {
+      "path": "src/il2cpp/hook/umamusume/LiveUtil.rs",
+      "sha256": "24c1af8394eaf517ed98f936a7b5a5ce1dffa84c6342dabf78bf9debb765bb87"
+    },
+    {
+      "path": "src/il2cpp/symbols.rs",
+      "sha256": "55057629d3e1e87079261834d4ae20252fe809ed785230f4bc18de40900d79ad"
+    },
+    {
+      "path": "src/windows/proxy/unityplayer.rs",
+      "sha256": "966a969f1b8067c1451315835acc58da074a5cf8286861a3a7a30cf2cb4e0132"
+    },
+    {
+      "path": "src/windows/symbols_impl.rs",
+      "sha256": "6535f419e82a9a1de000f6b0c9a910a3acfdeaa4f8e41e66129692e1145671e7"
+    },
+    {
+      "path": "src/il2cpp/hook/umamusume/LiveTheaterViewController.rs",
+      "sha256": "03883347eea33f5540c27c7052835215a8e23e1881cffa3a19dfd993a2b0c197"
+    }
+  ]
+}

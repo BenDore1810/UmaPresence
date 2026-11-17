@@ -1,0 +1,10 @@
+dist/
+.tools/
+__pycache__/
+*.pyc
+/settings.json
+*.log
+/diagnostic*.txt
+/live-diagnostic.txt
+/dependencies/
+*.pdb

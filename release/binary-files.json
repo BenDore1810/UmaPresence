@@ -1,0 +1,17 @@
+{
+  "UmaPresence.exe": "dist/public-build/UmaPresence.exe",
+  "UmaPresence.exe.config": "dist/public-build/UmaPresence.exe.config",
+  "settings.json": "release/settings.public.json",
+  "LICENSE": "LICENSE",
+  "MinHook-LICENSE.txt": "standalone/upstream/minhook/LICENSE.txt",
+  "README.md": "release/README.md",
+  "BUILD.md": "release/BUILD.md",
+  "NOTICES.md": "release/NOTICES.md",
+  "RELEASE-NOTES.md": "release/RELEASE-NOTES.md",
+  "standalone/UnityPlayer.dll": "dist/public-native/UnityPlayer.dll",
+  "standalone/umapyon_bridge.dll": "dist/public-native/umapyon_bridge.dll",
+  "standalone/game-profile.json": "dist/public-native/game-profile.json",
+  "standalone/loader-provenance.json": "dist/public-native/loader-provenance.json",
+  "CHECKLIST.md": "release/checklist.md",
+  "verification/native-policy-check.json": "dist/public-native/public-policy-check.json"
+}

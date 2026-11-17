@@ -1,0 +1,1730 @@
+[
+  {
+    "DressId": 100101,
+    "CharacterId": 1001,
+    "Url": "https://umamusu.wiki/w/images/6/63/Game_Asset_chara_stand_1001_100101.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 100102,
+    "CharacterId": 1001,
+    "Url": "https://umamusu.wiki/w/images/2/29/Game_Asset_chara_stand_1001_100102.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 100130,
+    "CharacterId": 1001,
+    "Url": "https://umamusu.wiki/w/images/9/93/Game_Asset_chara_stand_1001_100130.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 100201,
+    "CharacterId": 1002,
+    "Url": "https://umamusu.wiki/w/images/5/57/Game_Asset_chara_stand_1002_100201.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 100230,
+    "CharacterId": 1002,
+    "Url": "https://umamusu.wiki/w/images/4/43/Game_Asset_chara_stand_1002_100230.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 100301,
+    "CharacterId": 1003,
+    "Url": "https://umamusu.wiki/w/images/c/cf/Game_Asset_chara_stand_1003_100301.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 100302,
+    "CharacterId": 1003,
+    "Url": "https://umamusu.wiki/w/images/1/1a/Game_Asset_chara_stand_1003_100302.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 100343,
+    "CharacterId": 1003,
+    "Url": "https://umamusu.wiki/w/images/f/f5/Game_Asset_chara_stand_1003_100343.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 100401,
+    "CharacterId": 1004,
+    "Url": "https://umamusu.wiki/w/images/5/5b/Game_Asset_chara_stand_1004_100401.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 100410,
+    "CharacterId": 1004,
+    "Url": "https://umamusu.wiki/w/images/f/f2/Game_Asset_chara_stand_1004_100410.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 100430,
+    "CharacterId": 1004,
+    "Url": "https://umamusu.wiki/w/images/0/02/Game_Asset_chara_stand_1004_100430.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 100501,
+    "CharacterId": 1005,
+    "Url": "https://umamusu.wiki/w/images/7/7b/Game_Asset_chara_stand_1005_100501.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 100520,
+    "CharacterId": 1005,
+    "Url": "https://umamusu.wiki/w/images/3/36/Game_Asset_chara_stand_1005_100520.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 100550,
+    "CharacterId": 1005,
+    "Url": "https://umamusu.wiki/w/images/4/45/Game_Asset_chara_stand_1005_100550.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 100601,
+    "CharacterId": 1006,
+    "Url": "https://umamusu.wiki/w/images/3/31/Game_Asset_chara_stand_1006_100601.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 100602,
+    "CharacterId": 1006,
+    "Url": "https://umamusu.wiki/w/images/6/6f/Game_Asset_chara_stand_1006_100602.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 100646,
+    "CharacterId": 1006,
+    "Url": "https://umamusu.wiki/w/images/5/58/Game_Asset_chara_stand_1006_100646.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 100701,
+    "CharacterId": 1007,
+    "Url": "https://umamusu.wiki/w/images/8/8a/Game_Asset_chara_stand_1007_100701.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 100702,
+    "CharacterId": 1007,
+    "Url": "https://umamusu.wiki/w/images/c/c2/Game_Asset_chara_stand_1007_100702.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 100730,
+    "CharacterId": 1007,
+    "Url": "https://umamusu.wiki/w/images/e/ee/Game_Asset_chara_stand_1007_100730.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 100801,
+    "CharacterId": 1008,
+    "Url": "https://umamusu.wiki/w/images/b/b2/Game_Asset_chara_stand_1008_100801.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 100846,
+    "CharacterId": 1008,
+    "Url": "https://umamusu.wiki/w/images/4/47/Game_Asset_chara_stand_1008_100846.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 100901,
+    "CharacterId": 1009,
+    "Url": "https://umamusu.wiki/w/images/0/0d/Game_Asset_chara_stand_1009_100901.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 100902,
+    "CharacterId": 1009,
+    "Url": "https://media.gametora.com/umamusume/characters/portrait/trainee/256/100903.png",
+    "Style": "portrait"
+  },
+  {
+    "DressId": 100946,
+    "CharacterId": 1009,
+    "Url": "https://umamusu.wiki/w/images/1/13/Game_Asset_chara_stand_1009_100946.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 101001,
+    "CharacterId": 1010,
+    "Url": "https://umamusu.wiki/w/images/0/0f/Game_Asset_chara_stand_1010_101001.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 101013,
+    "CharacterId": 1010,
+    "Url": "https://umamusu.wiki/w/images/8/84/Game_Asset_chara_stand_1010_101013.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 101023,
+    "CharacterId": 1010,
+    "Url": "https://umamusu.wiki/w/images/e/ea/Game_Asset_chara_stand_1010_101023.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 101101,
+    "CharacterId": 1011,
+    "Url": "https://umamusu.wiki/w/images/0/0a/Game_Asset_chara_stand_1011_101101.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 101102,
+    "CharacterId": 1011,
+    "Url": "https://umamusu.wiki/w/images/f/fb/Game_Asset_chara_stand_1011_101102.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 101116,
+    "CharacterId": 1011,
+    "Url": "https://umamusu.wiki/w/images/3/36/Game_Asset_chara_stand_1011_101116.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 101201,
+    "CharacterId": 1012,
+    "Url": "https://umamusu.wiki/w/images/8/81/Game_Asset_chara_stand_1012_101201.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 101226,
+    "CharacterId": 1012,
+    "Url": "https://umamusu.wiki/w/images/a/a1/Game_Asset_chara_stand_1012_101226.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 101301,
+    "CharacterId": 1013,
+    "Url": "https://umamusu.wiki/w/images/4/48/Game_Asset_chara_stand_1013_101301.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 101302,
+    "CharacterId": 1013,
+    "Url": "https://umamusu.wiki/w/images/3/39/Game_Asset_chara_stand_1013_101302.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 101330,
+    "CharacterId": 1013,
+    "Url": "https://umamusu.wiki/w/images/9/9c/Game_Asset_chara_stand_1013_101330.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 101401,
+    "CharacterId": 1014,
+    "Url": "https://umamusu.wiki/w/images/a/aa/Game_Asset_chara_stand_1014_101401.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 101416,
+    "CharacterId": 1014,
+    "Url": "https://umamusu.wiki/w/images/2/2c/Game_Asset_chara_stand_1014_101416.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 101501,
+    "CharacterId": 1015,
+    "Url": "https://umamusu.wiki/w/images/b/bf/Game_Asset_chara_stand_1015_101501.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 101510,
+    "CharacterId": 1015,
+    "Url": "https://umamusu.wiki/w/images/c/c5/Game_Asset_chara_stand_1015_101510.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 101601,
+    "CharacterId": 1016,
+    "Url": "https://umamusu.wiki/w/images/4/4e/Game_Asset_chara_stand_1016_101601.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 101602,
+    "CharacterId": 1016,
+    "Url": "https://umamusu.wiki/w/images/2/23/Game_Asset_chara_stand_1016_101602.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 101701,
+    "CharacterId": 1017,
+    "Url": "https://umamusu.wiki/w/images/8/8d/Game_Asset_chara_stand_1017_101701.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 101740,
+    "CharacterId": 1017,
+    "Url": "https://umamusu.wiki/w/images/a/a7/Game_Asset_chara_stand_1017_101740.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 101743,
+    "CharacterId": 1017,
+    "Url": "https://umamusu.wiki/w/images/6/68/Game_Asset_chara_stand_1017_101743.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 101801,
+    "CharacterId": 1018,
+    "Url": "https://umamusu.wiki/w/images/6/62/Game_Asset_chara_stand_1018_101801.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 101826,
+    "CharacterId": 1018,
+    "Url": "https://umamusu.wiki/w/images/9/9e/Game_Asset_chara_stand_1018_101826.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 101840,
+    "CharacterId": 1018,
+    "Url": "https://umamusu.wiki/w/images/9/99/Game_Asset_chara_stand_1018_101840.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 101901,
+    "CharacterId": 1019,
+    "Url": "https://umamusu.wiki/w/images/0/02/Game_Asset_chara_stand_1019_101901.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 101940,
+    "CharacterId": 1019,
+    "Url": "https://umamusu.wiki/w/images/9/9a/Game_Asset_chara_stand_1019_101940.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 102001,
+    "CharacterId": 1020,
+    "Url": "https://umamusu.wiki/w/images/b/b0/Game_Asset_chara_stand_1020_102001.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 102020,
+    "CharacterId": 1020,
+    "Url": "https://umamusu.wiki/w/images/6/67/Game_Asset_chara_stand_1020_102020.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 102030,
+    "CharacterId": 1020,
+    "Url": "https://umamusu.wiki/w/images/e/e1/Game_Asset_chara_stand_1020_102030.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 102101,
+    "CharacterId": 1021,
+    "Url": "https://umamusu.wiki/w/images/5/53/Game_Asset_chara_stand_1021_102101.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 102143,
+    "CharacterId": 1021,
+    "Url": "https://umamusu.wiki/w/images/4/4f/Game_Asset_chara_stand_1021_102143.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 102201,
+    "CharacterId": 1022,
+    "Url": "https://umamusu.wiki/w/images/c/c6/Game_Asset_chara_stand_1022_102201.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 102202,
+    "CharacterId": 1022,
+    "Url": "https://umamusu.wiki/w/images/d/d2/Game_Asset_chara_stand_1022_102202.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 102226,
+    "CharacterId": 1022,
+    "Url": "https://umamusu.wiki/w/images/1/17/Game_Asset_chara_stand_1022_102226.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 102260,
+    "CharacterId": 1022,
+    "Url": "",
+    "Style": "stand"
+  },
+  {
+    "DressId": 102301,
+    "CharacterId": 1023,
+    "Url": "https://umamusu.wiki/w/images/9/92/Game_Asset_chara_stand_1023_102301.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 102302,
+    "CharacterId": 1023,
+    "Url": "https://umamusu.wiki/w/images/1/19/Game_Asset_chara_stand_1023_102302.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 102346,
+    "CharacterId": 1023,
+    "Url": "https://umamusu.wiki/w/images/9/96/Game_Asset_chara_stand_1023_102346.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 102401,
+    "CharacterId": 1024,
+    "Url": "https://umamusu.wiki/w/images/9/9f/Game_Asset_chara_stand_1024_102401.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 102426,
+    "CharacterId": 1024,
+    "Url": "https://umamusu.wiki/w/images/6/6e/Game_Asset_chara_stand_1024_102426.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 102440,
+    "CharacterId": 1024,
+    "Url": "https://umamusu.wiki/w/images/6/6e/Game_Asset_chara_stand_1024_102440.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 102501,
+    "CharacterId": 1025,
+    "Url": "https://umamusu.wiki/w/images/6/64/Game_Asset_chara_stand_1025_102501.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 102513,
+    "CharacterId": 1025,
+    "Url": "https://umamusu.wiki/w/images/8/8c/Game_Asset_chara_stand_1025_102513.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 102526,
+    "CharacterId": 1025,
+    "Url": "https://umamusu.wiki/w/images/8/81/Game_Asset_chara_stand_1025_102526.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 102601,
+    "CharacterId": 1026,
+    "Url": "https://umamusu.wiki/w/images/d/d1/Game_Asset_chara_stand_1026_102601.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 102613,
+    "CharacterId": 1026,
+    "Url": "https://umamusu.wiki/w/images/2/28/Game_Asset_chara_stand_1026_102613.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 102701,
+    "CharacterId": 1027,
+    "Url": "https://umamusu.wiki/w/images/0/0e/Game_Asset_chara_stand_1027_102701.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 102713,
+    "CharacterId": 1027,
+    "Url": "https://umamusu.wiki/w/images/7/77/Game_Asset_chara_stand_1027_102713.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 102801,
+    "CharacterId": 1028,
+    "Url": "https://umamusu.wiki/w/images/3/33/Game_Asset_chara_stand_1028_102801.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 102840,
+    "CharacterId": 1028,
+    "Url": "https://umamusu.wiki/w/images/c/c4/Game_Asset_chara_stand_1028_102840.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 102901,
+    "CharacterId": 1029,
+    "Url": "https://umamusu.wiki/w/images/1/17/Game_Asset_chara_stand_1029_102901.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 102913,
+    "CharacterId": 1029,
+    "Url": "https://umamusu.wiki/w/images/c/c9/Game_Asset_chara_stand_1029_102913.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 103001,
+    "CharacterId": 1030,
+    "Url": "https://umamusu.wiki/w/images/8/85/Game_Asset_chara_stand_1030_103001.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 103002,
+    "CharacterId": 1030,
+    "Url": "https://umamusu.wiki/w/images/d/d2/Game_Asset_chara_stand_1030_103002.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 103040,
+    "CharacterId": 1030,
+    "Url": "https://umamusu.wiki/w/images/0/0a/Game_Asset_chara_stand_1030_103040.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 103101,
+    "CharacterId": 1031,
+    "Url": "https://umamusu.wiki/w/images/f/f6/Game_Asset_chara_stand_1031_103101.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 103102,
+    "CharacterId": 1031,
+    "Url": "https://umamusu.wiki/w/images/e/e3/Game_Asset_chara_stand_1031_103102.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 103113,
+    "CharacterId": 1031,
+    "Url": "https://umamusu.wiki/w/images/5/57/Game_Asset_chara_stand_1031_103113.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 103201,
+    "CharacterId": 1032,
+    "Url": "https://umamusu.wiki/w/images/d/d1/Game_Asset_chara_stand_1032_103201.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 103202,
+    "CharacterId": 1032,
+    "Url": "https://umamusu.wiki/w/images/f/ff/Game_Asset_chara_stand_1032_103202.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 103230,
+    "CharacterId": 1032,
+    "Url": "https://umamusu.wiki/w/images/b/b2/Game_Asset_chara_stand_1032_103230.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 103301,
+    "CharacterId": 1033,
+    "Url": "https://umamusu.wiki/w/images/3/3b/Game_Asset_chara_stand_1033_103301.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 103346,
+    "CharacterId": 1033,
+    "Url": "https://umamusu.wiki/w/images/a/ad/Game_Asset_chara_stand_1033_103346.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 103401,
+    "CharacterId": 1034,
+    "Url": "https://umamusu.wiki/w/images/7/79/Game_Asset_chara_stand_1034_103401.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 103443,
+    "CharacterId": 1034,
+    "Url": "https://umamusu.wiki/w/images/1/18/Game_Asset_chara_stand_1034_103443.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 103501,
+    "CharacterId": 1035,
+    "Url": "https://umamusu.wiki/w/images/d/dc/Game_Asset_chara_stand_1035_103501.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 103502,
+    "CharacterId": 1035,
+    "Url": "https://umamusu.wiki/w/images/9/91/Game_Asset_chara_stand_1035_103502.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 103516,
+    "CharacterId": 1035,
+    "Url": "https://umamusu.wiki/w/images/1/1d/Game_Asset_chara_stand_1035_103516.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 103601,
+    "CharacterId": 1036,
+    "Url": "https://umamusu.wiki/w/images/b/b5/Game_Asset_chara_stand_1036_103601.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 103640,
+    "CharacterId": 1036,
+    "Url": "https://umamusu.wiki/w/images/7/76/Game_Asset_chara_stand_1036_103640.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 103701,
+    "CharacterId": 1037,
+    "Url": "https://umamusu.wiki/w/images/1/16/Game_Asset_chara_stand_1037_103701.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 103713,
+    "CharacterId": 1037,
+    "Url": "https://umamusu.wiki/w/images/e/e5/Game_Asset_chara_stand_1037_103713.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 103730,
+    "CharacterId": 1037,
+    "Url": "https://umamusu.wiki/w/images/a/a9/Game_Asset_chara_stand_1037_103730.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 103801,
+    "CharacterId": 1038,
+    "Url": "https://umamusu.wiki/w/images/5/5a/Game_Asset_chara_stand_1038_103801.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 103826,
+    "CharacterId": 1038,
+    "Url": "https://umamusu.wiki/w/images/f/f5/Game_Asset_chara_stand_1038_103826.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 103901,
+    "CharacterId": 1039,
+    "Url": "https://umamusu.wiki/w/images/6/6e/Game_Asset_chara_stand_1039_103901.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 103943,
+    "CharacterId": 1039,
+    "Url": "https://umamusu.wiki/w/images/a/af/Game_Asset_chara_stand_1039_103943.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 104001,
+    "CharacterId": 1040,
+    "Url": "https://umamusu.wiki/w/images/7/72/Game_Asset_chara_stand_1040_104001.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 104002,
+    "CharacterId": 1040,
+    "Url": "https://umamusu.wiki/w/images/2/2e/Game_Asset_chara_stand_1040_104002.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 104043,
+    "CharacterId": 1040,
+    "Url": "https://umamusu.wiki/w/images/3/30/Game_Asset_chara_stand_1040_104043.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 104101,
+    "CharacterId": 1041,
+    "Url": "https://umamusu.wiki/w/images/3/32/Game_Asset_chara_stand_1041_104101.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 104120,
+    "CharacterId": 1041,
+    "Url": "https://umamusu.wiki/w/images/8/8b/Game_Asset_chara_stand_1041_104120.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 104150,
+    "CharacterId": 1041,
+    "Url": "https://umamusu.wiki/w/images/b/b5/Game_Asset_chara_stand_1041_104150.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 104201,
+    "CharacterId": 1042,
+    "Url": "https://umamusu.wiki/w/images/4/4b/Game_Asset_chara_stand_1042_104201.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 104240,
+    "CharacterId": 1042,
+    "Url": "https://umamusu.wiki/w/images/b/bc/Game_Asset_chara_stand_1042_104240.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 104301,
+    "CharacterId": 1043,
+    "Url": "https://umamusu.wiki/w/images/1/15/Game_Asset_chara_stand_1043_104301.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 104323,
+    "CharacterId": 1043,
+    "Url": "https://umamusu.wiki/w/images/c/cd/Game_Asset_chara_stand_1043_104323.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 104401,
+    "CharacterId": 1044,
+    "Url": "https://umamusu.wiki/w/images/a/ae/Game_Asset_chara_stand_1044_104401.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 104426,
+    "CharacterId": 1044,
+    "Url": "https://umamusu.wiki/w/images/b/b3/Game_Asset_chara_stand_1044_104426.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 104501,
+    "CharacterId": 1045,
+    "Url": "https://umamusu.wiki/w/images/9/9a/Game_Asset_chara_stand_1045_104501.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 104540,
+    "CharacterId": 1045,
+    "Url": "https://umamusu.wiki/w/images/8/8d/Game_Asset_chara_stand_1045_104540.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 104550,
+    "CharacterId": 1045,
+    "Url": "https://umamusu.wiki/w/images/3/30/Game_Asset_chara_stand_1045_104550.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 104601,
+    "CharacterId": 1046,
+    "Url": "https://umamusu.wiki/w/images/f/f0/Game_Asset_chara_stand_1046_104601.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 104602,
+    "CharacterId": 1046,
+    "Url": "https://umamusu.wiki/w/images/9/99/Game_Asset_chara_stand_1046_104602.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 104650,
+    "CharacterId": 1046,
+    "Url": "https://umamusu.wiki/w/images/3/36/Game_Asset_chara_stand_1046_104650.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 104701,
+    "CharacterId": 1047,
+    "Url": "https://umamusu.wiki/w/images/2/22/Game_Asset_chara_stand_1047_104701.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 104723,
+    "CharacterId": 1047,
+    "Url": "https://umamusu.wiki/w/images/6/60/Game_Asset_chara_stand_1047_104723.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 104801,
+    "CharacterId": 1048,
+    "Url": "https://umamusu.wiki/w/images/f/f5/Game_Asset_chara_stand_1048_104801.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 104823,
+    "CharacterId": 1048,
+    "Url": "https://umamusu.wiki/w/images/e/ef/Game_Asset_chara_stand_1048_104823.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 104840,
+    "CharacterId": 1048,
+    "Url": "https://umamusu.wiki/w/images/c/cb/Game_Asset_chara_stand_1048_104840.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 104901,
+    "CharacterId": 1049,
+    "Url": "https://umamusu.wiki/w/images/b/bd/Game_Asset_chara_stand_1049_104901.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 104946,
+    "CharacterId": 1049,
+    "Url": "https://umamusu.wiki/w/images/8/85/Game_Asset_chara_stand_1049_104946.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 105001,
+    "CharacterId": 1050,
+    "Url": "https://umamusu.wiki/w/images/5/5a/Game_Asset_chara_stand_1050_105001.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 105002,
+    "CharacterId": 1050,
+    "Url": "https://umamusu.wiki/w/images/2/2d/Game_Asset_chara_stand_1050_105002.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 105016,
+    "CharacterId": 1050,
+    "Url": "https://umamusu.wiki/w/images/f/f8/Game_Asset_chara_stand_1050_105016.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 105101,
+    "CharacterId": 1051,
+    "Url": "https://umamusu.wiki/w/images/2/2f/Game_Asset_chara_stand_1051_105101.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 105126,
+    "CharacterId": 1051,
+    "Url": "https://umamusu.wiki/w/images/9/99/Game_Asset_chara_stand_1051_105126.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 105201,
+    "CharacterId": 1052,
+    "Url": "https://umamusu.wiki/w/images/2/2f/Game_Asset_chara_stand_1052_105201.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 105210,
+    "CharacterId": 1052,
+    "Url": "https://umamusu.wiki/w/images/e/e9/Game_Asset_chara_stand_1052_105210.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 105301,
+    "CharacterId": 1053,
+    "Url": "https://umamusu.wiki/w/images/7/77/Game_Asset_chara_stand_1053_105301.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 105323,
+    "CharacterId": 1053,
+    "Url": "https://umamusu.wiki/w/images/c/c3/Game_Asset_chara_stand_1053_105323.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 105401,
+    "CharacterId": 1054,
+    "Url": "https://umamusu.wiki/w/images/b/b1/Game_Asset_chara_stand_1054_105401.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 105501,
+    "CharacterId": 1055,
+    "Url": "https://umamusu.wiki/w/images/d/df/Game_Asset_chara_stand_1055_105501.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 105540,
+    "CharacterId": 1055,
+    "Url": "https://umamusu.wiki/w/images/0/0f/Game_Asset_chara_stand_1055_105540.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 105601,
+    "CharacterId": 1056,
+    "Url": "https://umamusu.wiki/w/images/b/b3/Game_Asset_chara_stand_1056_105601.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 105623,
+    "CharacterId": 1056,
+    "Url": "https://umamusu.wiki/w/images/f/f4/Game_Asset_chara_stand_1056_105623.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 105701,
+    "CharacterId": 1057,
+    "Url": "https://umamusu.wiki/w/images/3/36/Game_Asset_chara_stand_1057_105701.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 105710,
+    "CharacterId": 1057,
+    "Url": "https://umamusu.wiki/w/images/e/e9/Game_Asset_chara_stand_1057_105710.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 105801,
+    "CharacterId": 1058,
+    "Url": "https://umamusu.wiki/w/images/e/e7/Game_Asset_chara_stand_1058_105801.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 105840,
+    "CharacterId": 1058,
+    "Url": "https://umamusu.wiki/w/images/9/9a/Game_Asset_chara_stand_1058_105840.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 105901,
+    "CharacterId": 1059,
+    "Url": "https://umamusu.wiki/w/images/0/05/Game_Asset_chara_stand_1059_105901.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 105923,
+    "CharacterId": 1059,
+    "Url": "https://umamusu.wiki/w/images/8/83/Game_Asset_chara_stand_1059_105923.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 106001,
+    "CharacterId": 1060,
+    "Url": "https://umamusu.wiki/w/images/6/66/Game_Asset_chara_stand_1060_106001.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 106010,
+    "CharacterId": 1060,
+    "Url": "https://umamusu.wiki/w/images/c/cb/Game_Asset_chara_stand_1060_106010.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 106050,
+    "CharacterId": 1060,
+    "Url": "https://umamusu.wiki/w/images/a/a7/Game_Asset_chara_stand_1060_106050.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 106101,
+    "CharacterId": 1061,
+    "Url": "https://umamusu.wiki/w/images/f/fa/Game_Asset_chara_stand_1061_106101.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 106126,
+    "CharacterId": 1061,
+    "Url": "https://umamusu.wiki/w/images/3/36/Game_Asset_chara_stand_1061_106126.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 106150,
+    "CharacterId": 1061,
+    "Url": "https://umamusu.wiki/w/images/0/04/Game_Asset_chara_stand_1061_106150.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 106201,
+    "CharacterId": 1062,
+    "Url": "https://umamusu.wiki/w/images/b/b4/Game_Asset_chara_stand_1062_106201.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 106250,
+    "CharacterId": 1062,
+    "Url": "https://umamusu.wiki/w/images/3/35/Game_Asset_chara_stand_1062_106250.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 106301,
+    "CharacterId": 1063,
+    "Url": "https://umamusu.wiki/w/images/9/9c/Game_Asset_chara_stand_1063_106301.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 106310,
+    "CharacterId": 1063,
+    "Url": "https://umamusu.wiki/w/images/2/29/Game_Asset_chara_stand_1063_106310.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 106401,
+    "CharacterId": 1064,
+    "Url": "https://umamusu.wiki/w/images/1/1f/Game_Asset_chara_stand_1064_106401.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 106446,
+    "CharacterId": 1064,
+    "Url": "https://umamusu.wiki/w/images/c/ce/Game_Asset_chara_stand_1064_106446.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 106501,
+    "CharacterId": 1065,
+    "Url": "https://umamusu.wiki/w/images/c/c1/Game_Asset_chara_stand_1065_106501.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 106520,
+    "CharacterId": 1065,
+    "Url": "https://umamusu.wiki/w/images/b/b0/Game_Asset_chara_stand_1065_106520.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 106601,
+    "CharacterId": 1066,
+    "Url": "https://umamusu.wiki/w/images/a/af/Game_Asset_chara_stand_1066_106601.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 106701,
+    "CharacterId": 1067,
+    "Url": "https://umamusu.wiki/w/images/0/09/Game_Asset_chara_stand_1067_106701.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 106702,
+    "CharacterId": 1067,
+    "Url": "https://umamusu.wiki/w/images/4/4c/Game_Asset_chara_stand_1067_106702.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 106710,
+    "CharacterId": 1067,
+    "Url": "https://umamusu.wiki/w/images/a/a8/Game_Asset_chara_stand_1067_106710.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 106801,
+    "CharacterId": 1068,
+    "Url": "https://umamusu.wiki/w/images/1/16/Game_Asset_chara_stand_1068_106801.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 106802,
+    "CharacterId": 1068,
+    "Url": "https://umamusu.wiki/w/images/9/99/Game_Asset_chara_stand_1068_106802.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 106810,
+    "CharacterId": 1068,
+    "Url": "https://umamusu.wiki/w/images/a/ad/Game_Asset_chara_stand_1068_106810.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 106901,
+    "CharacterId": 1069,
+    "Url": "https://umamusu.wiki/w/images/6/63/Game_Asset_chara_stand_1069_106901.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 106920,
+    "CharacterId": 1069,
+    "Url": "https://umamusu.wiki/w/images/0/0b/Game_Asset_chara_stand_1069_106920.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 106960,
+    "CharacterId": 1069,
+    "Url": "",
+    "Style": "stand"
+  },
+  {
+    "DressId": 107001,
+    "CharacterId": 1070,
+    "Url": "https://umamusu.wiki/w/images/3/3d/Game_Asset_chara_stand_1070_107001.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 107002,
+    "CharacterId": 1070,
+    "Url": "https://umamusu.wiki/w/images/4/4d/Game_Asset_chara_stand_1070_107002.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 107101,
+    "CharacterId": 1071,
+    "Url": "https://umamusu.wiki/w/images/1/1f/Game_Asset_chara_stand_1071_107101.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 107120,
+    "CharacterId": 1071,
+    "Url": "https://umamusu.wiki/w/images/2/2c/Game_Asset_chara_stand_1071_107120.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 107201,
+    "CharacterId": 1072,
+    "Url": "https://umamusu.wiki/w/images/e/ef/Game_Asset_chara_stand_1072_107201.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 107250,
+    "CharacterId": 1072,
+    "Url": "https://umamusu.wiki/w/images/1/18/Game_Asset_chara_stand_1072_107250.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 107301,
+    "CharacterId": 1073,
+    "Url": "https://umamusu.wiki/w/images/3/35/Game_Asset_chara_stand_1073_107301.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 107401,
+    "CharacterId": 1074,
+    "Url": "https://umamusu.wiki/w/images/0/01/Game_Asset_chara_stand_1074_107401.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 107430,
+    "CharacterId": 1074,
+    "Url": "https://umamusu.wiki/w/images/6/63/Game_Asset_chara_stand_1074_107430.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 107446,
+    "CharacterId": 1074,
+    "Url": "https://umamusu.wiki/w/images/4/44/Game_Asset_chara_stand_1074_107446.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 107501,
+    "CharacterId": 1075,
+    "Url": "https://umamusu.wiki/w/images/6/65/Game_Asset_chara_stand_1075_107501.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 107601,
+    "CharacterId": 1076,
+    "Url": "https://umamusu.wiki/w/images/8/89/Game_Asset_chara_stand_1076_107601.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 107610,
+    "CharacterId": 1076,
+    "Url": "https://umamusu.wiki/w/images/0/02/Game_Asset_chara_stand_1076_107610.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 107701,
+    "CharacterId": 1077,
+    "Url": "https://umamusu.wiki/w/images/6/69/Game_Asset_chara_stand_1077_107701.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 107702,
+    "CharacterId": 1077,
+    "Url": "https://umamusu.wiki/w/images/9/92/Game_Asset_chara_stand_1077_107702.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 107746,
+    "CharacterId": 1077,
+    "Url": "https://umamusu.wiki/w/images/f/fd/Game_Asset_chara_stand_1077_107746.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 107760,
+    "CharacterId": 1077,
+    "Url": "",
+    "Style": "stand"
+  },
+  {
+    "DressId": 107801,
+    "CharacterId": 1078,
+    "Url": "https://umamusu.wiki/w/images/7/7b/Game_Asset_chara_stand_1078_107801.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 107813,
+    "CharacterId": 1078,
+    "Url": "https://umamusu.wiki/w/images/2/2b/Game_Asset_chara_stand_1078_107813.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 107901,
+    "CharacterId": 1079,
+    "Url": "https://umamusu.wiki/w/images/d/d3/Game_Asset_chara_stand_1079_107901.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 108001,
+    "CharacterId": 1080,
+    "Url": "https://umamusu.wiki/w/images/c/c7/Game_Asset_chara_stand_1080_108001.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 108002,
+    "CharacterId": 1080,
+    "Url": "https://umamusu.wiki/w/images/f/f0/Game_Asset_chara_stand_1080_108002.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 108101,
+    "CharacterId": 1081,
+    "Url": "https://umamusu.wiki/w/images/6/62/Game_Asset_chara_stand_1081_108101.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 108201,
+    "CharacterId": 1082,
+    "Url": "https://umamusu.wiki/w/images/5/57/Game_Asset_chara_stand_1082_108201.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 108220,
+    "CharacterId": 1082,
+    "Url": "https://umamusu.wiki/w/images/7/72/Game_Asset_chara_stand_1082_108220.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 108301,
+    "CharacterId": 1083,
+    "Url": "https://umamusu.wiki/w/images/8/8c/Game_Asset_chara_stand_1083_108301.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 108340,
+    "CharacterId": 1083,
+    "Url": "https://umamusu.wiki/w/images/5/5d/Game_Asset_chara_stand_1083_108340.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 108401,
+    "CharacterId": 1084,
+    "Url": "https://umamusu.wiki/w/images/5/50/Game_Asset_chara_stand_1084_108401.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 108420,
+    "CharacterId": 1084,
+    "Url": "https://umamusu.wiki/w/images/1/14/Game_Asset_chara_stand_1084_108420.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 108501,
+    "CharacterId": 1085,
+    "Url": "https://umamusu.wiki/w/images/5/54/Game_Asset_chara_stand_1085_108501.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 108520,
+    "CharacterId": 1085,
+    "Url": "https://umamusu.wiki/w/images/8/8d/Game_Asset_chara_stand_1085_108520.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 108601,
+    "CharacterId": 1086,
+    "Url": "https://umamusu.wiki/w/images/e/e7/Game_Asset_chara_stand_1086_108601.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 108626,
+    "CharacterId": 1086,
+    "Url": "https://umamusu.wiki/w/images/9/94/Game_Asset_chara_stand_1086_108626.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 108701,
+    "CharacterId": 1087,
+    "Url": "https://umamusu.wiki/w/images/e/ea/Game_Asset_chara_stand_1087_108701.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 108713,
+    "CharacterId": 1087,
+    "Url": "https://umamusu.wiki/w/images/5/58/Game_Asset_chara_stand_1087_108713.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 108801,
+    "CharacterId": 1088,
+    "Url": "https://umamusu.wiki/w/images/2/28/Game_Asset_chara_stand_1088_108801.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 108830,
+    "CharacterId": 1088,
+    "Url": "https://umamusu.wiki/w/images/3/3b/Game_Asset_chara_stand_1088_108830.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 108901,
+    "CharacterId": 1089,
+    "Url": "https://umamusu.wiki/w/images/1/14/Game_Asset_chara_stand_1089_108901.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 108930,
+    "CharacterId": 1089,
+    "Url": "https://umamusu.wiki/w/images/2/2e/Game_Asset_chara_stand_1089_108930.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 108960,
+    "CharacterId": 1089,
+    "Url": "",
+    "Style": "stand"
+  },
+  {
+    "DressId": 108980,
+    "CharacterId": 1089,
+    "Url": "",
+    "Style": "stand"
+  },
+  {
+    "DressId": 109001,
+    "CharacterId": 1090,
+    "Url": "https://umamusu.wiki/w/images/5/5a/Game_Asset_chara_stand_1090_109001.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 109101,
+    "CharacterId": 1091,
+    "Url": "https://umamusu.wiki/w/images/c/c6/Game_Asset_chara_stand_1091_109101.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 109130,
+    "CharacterId": 1091,
+    "Url": "https://umamusu.wiki/w/images/6/6d/Game_Asset_chara_stand_1091_109130.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 109201,
+    "CharacterId": 1092,
+    "Url": "https://umamusu.wiki/w/images/b/b6/Game_Asset_chara_stand_1092_109201.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 109301,
+    "CharacterId": 1093,
+    "Url": "https://umamusu.wiki/w/images/7/7b/Game_Asset_chara_stand_1093_109301.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 109323,
+    "CharacterId": 1093,
+    "Url": "https://umamusu.wiki/w/images/b/bf/Game_Asset_chara_stand_1093_109323.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 109401,
+    "CharacterId": 1094,
+    "Url": "https://umamusu.wiki/w/images/f/f7/Game_Asset_chara_stand_1094_109401.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 109450,
+    "CharacterId": 1094,
+    "Url": "https://umamusu.wiki/w/images/8/8f/Game_Asset_chara_stand_1094_109450.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 109460,
+    "CharacterId": 1094,
+    "Url": "",
+    "Style": "stand"
+  },
+  {
+    "DressId": 109501,
+    "CharacterId": 1095,
+    "Url": "https://umamusu.wiki/w/images/6/69/Game_Asset_chara_stand_1095_109501.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 109601,
+    "CharacterId": 1096,
+    "Url": "https://umamusu.wiki/w/images/f/fc/Game_Asset_chara_stand_1096_109601.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 109701,
+    "CharacterId": 1097,
+    "Url": "https://umamusu.wiki/w/images/4/4c/Game_Asset_chara_stand_1097_109701.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 109801,
+    "CharacterId": 1098,
+    "Url": "https://umamusu.wiki/w/images/b/bd/Game_Asset_chara_stand_1098_109801.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 109850,
+    "CharacterId": 1098,
+    "Url": "https://umamusu.wiki/w/images/1/1c/Game_Asset_chara_stand_1098_109850.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 109901,
+    "CharacterId": 1099,
+    "Url": "https://umamusu.wiki/w/images/7/7b/Game_Asset_chara_stand_1099_109901.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 109930,
+    "CharacterId": 1099,
+    "Url": "https://umamusu.wiki/w/images/e/e5/Game_Asset_chara_stand_1099_109930.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 109960,
+    "CharacterId": 1099,
+    "Url": "",
+    "Style": "stand"
+  },
+  {
+    "DressId": 110001,
+    "CharacterId": 1100,
+    "Url": "https://umamusu.wiki/w/images/f/f5/Game_Asset_chara_stand_1100_110001.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 110002,
+    "CharacterId": 1100,
+    "Url": "https://umamusu.wiki/w/images/0/0d/Game_Asset_chara_stand_1100_110002.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 110201,
+    "CharacterId": 1102,
+    "Url": "https://umamusu.wiki/w/images/e/ec/Game_Asset_chara_stand_1102_110201.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 110213,
+    "CharacterId": 1102,
+    "Url": "https://umamusu.wiki/w/images/0/02/Game_Asset_chara_stand_1102_110213.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 110301,
+    "CharacterId": 1103,
+    "Url": "https://umamusu.wiki/w/images/5/54/Game_Asset_chara_stand_1103_110301.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 110401,
+    "CharacterId": 1104,
+    "Url": "https://umamusu.wiki/w/images/7/79/Game_Asset_chara_stand_1104_110401.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 110410,
+    "CharacterId": 1104,
+    "Url": "https://umamusu.wiki/w/images/4/4b/Game_Asset_chara_stand_1104_110410.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 110501,
+    "CharacterId": 1105,
+    "Url": "https://umamusu.wiki/w/images/6/65/Game_Asset_chara_stand_1105_110501.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 110523,
+    "CharacterId": 1105,
+    "Url": "https://umamusu.wiki/w/images/7/74/Game_Asset_chara_stand_1105_110523.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 110601,
+    "CharacterId": 1106,
+    "Url": "https://umamusu.wiki/w/images/3/30/Game_Asset_chara_stand_1106_110601.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 110623,
+    "CharacterId": 1106,
+    "Url": "https://umamusu.wiki/w/images/9/9f/Game_Asset_chara_stand_1106_110623.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 110701,
+    "CharacterId": 1107,
+    "Url": "https://umamusu.wiki/w/images/c/cb/Game_Asset_chara_stand_1107_110701.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 110720,
+    "CharacterId": 1107,
+    "Url": "https://umamusu.wiki/w/images/2/2a/Game_Asset_chara_stand_1107_110720.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 110801,
+    "CharacterId": 1108,
+    "Url": "https://umamusu.wiki/w/images/2/2f/Game_Asset_chara_stand_1108_110801.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 110840,
+    "CharacterId": 1108,
+    "Url": "https://umamusu.wiki/w/images/7/71/Game_Asset_chara_stand_1108_110840.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 110901,
+    "CharacterId": 1109,
+    "Url": "https://umamusu.wiki/w/images/c/c5/Game_Asset_chara_stand_1109_110901.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 110902,
+    "CharacterId": 1109,
+    "Url": "https://umamusu.wiki/w/images/6/63/Game_Asset_chara_stand_1109_110902.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 111001,
+    "CharacterId": 1110,
+    "Url": "https://umamusu.wiki/w/images/4/4c/Game_Asset_chara_stand_1110_111001.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 111026,
+    "CharacterId": 1110,
+    "Url": "https://umamusu.wiki/w/images/6/6a/Game_Asset_chara_stand_1110_111026.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 111101,
+    "CharacterId": 1111,
+    "Url": "https://umamusu.wiki/w/images/3/34/Game_Asset_chara_stand_1111_111101.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 111201,
+    "CharacterId": 1112,
+    "Url": "https://umamusu.wiki/w/images/5/5b/Game_Asset_chara_stand_1112_111201.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 111301,
+    "CharacterId": 1113,
+    "Url": "https://umamusu.wiki/w/images/b/bf/Game_Asset_chara_stand_1113_111301.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 111330,
+    "CharacterId": 1113,
+    "Url": "https://umamusu.wiki/w/images/c/c7/Game_Asset_chara_stand_1113_111330.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 111401,
+    "CharacterId": 1114,
+    "Url": "https://umamusu.wiki/w/images/7/7d/Game_Asset_chara_stand_1114_111401.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 111501,
+    "CharacterId": 1115,
+    "Url": "https://umamusu.wiki/w/images/d/d0/Game_Asset_chara_stand_1115_111501.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 111601,
+    "CharacterId": 1116,
+    "Url": "https://umamusu.wiki/w/images/c/ca/Game_Asset_chara_stand_1116_111601.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 111626,
+    "CharacterId": 1116,
+    "Url": "https://umamusu.wiki/w/images/8/88/Game_Asset_chara_stand_1116_111626.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 111701,
+    "CharacterId": 1117,
+    "Url": "https://umamusu.wiki/w/images/0/08/Game_Asset_chara_stand_1117_111701.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 111801,
+    "CharacterId": 1118,
+    "Url": "https://umamusu.wiki/w/images/7/7f/Game_Asset_chara_stand_1118_111801.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 111901,
+    "CharacterId": 1119,
+    "Url": "https://umamusu.wiki/w/images/0/00/Game_Asset_chara_stand_1119_111901.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 111946,
+    "CharacterId": 1119,
+    "Url": "https://umamusu.wiki/w/images/d/dd/Game_Asset_chara_stand_1119_111946.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 112001,
+    "CharacterId": 1120,
+    "Url": "https://umamusu.wiki/w/images/5/50/Game_Asset_chara_stand_1120_112001.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 112101,
+    "CharacterId": 1121,
+    "Url": "https://umamusu.wiki/w/images/f/f7/Game_Asset_chara_stand_1121_112101.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 112401,
+    "CharacterId": 1124,
+    "Url": "https://umamusu.wiki/w/images/c/cc/Game_Asset_chara_stand_1124_112401.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 112410,
+    "CharacterId": 1124,
+    "Url": "https://umamusu.wiki/w/images/b/b6/Game_Asset_chara_stand_1124_112410.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 112601,
+    "CharacterId": 1126,
+    "Url": "https://umamusu.wiki/w/images/8/89/Game_Asset_chara_stand_1126_112601.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 112701,
+    "CharacterId": 1127,
+    "Url": "https://umamusu.wiki/w/images/3/39/Game_Asset_chara_stand_1127_112701.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 112723,
+    "CharacterId": 1127,
+    "Url": "https://umamusu.wiki/w/images/5/5a/Game_Asset_chara_stand_1127_112723.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 112801,
+    "CharacterId": 1128,
+    "Url": "https://umamusu.wiki/w/images/c/ca/Game_Asset_chara_stand_1128_112801.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 112901,
+    "CharacterId": 1129,
+    "Url": "https://umamusu.wiki/w/images/2/27/Game_Asset_chara_stand_1129_112901.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 113001,
+    "CharacterId": 1130,
+    "Url": "https://umamusu.wiki/w/images/2/29/Game_Asset_chara_stand_1130_113001.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 113101,
+    "CharacterId": 1131,
+    "Url": "https://umamusu.wiki/w/images/9/9c/Game_Asset_chara_stand_1131_113101.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 113201,
+    "CharacterId": 1132,
+    "Url": "https://umamusu.wiki/w/images/2/22/Game_Asset_chara_stand_1132_113201.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 113202,
+    "CharacterId": 1132,
+    "Url": "https://umamusu.wiki/w/images/7/7c/Game_Asset_chara_stand_1132_113202.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 113301,
+    "CharacterId": 1133,
+    "Url": "https://umamusu.wiki/w/images/1/13/Game_Asset_chara_stand_1133_113301.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 113401,
+    "CharacterId": 1134,
+    "Url": "https://umamusu.wiki/w/images/0/0b/Game_Asset_chara_stand_1134_113401.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 113501,
+    "CharacterId": 1135,
+    "Url": "https://umamusu.wiki/w/images/9/9e/Game_Asset_chara_stand_1135_113501.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 113601,
+    "CharacterId": 1136,
+    "Url": "https://umamusu.wiki/w/images/3/3a/Game_Asset_chara_stand_1136_113601.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 113701,
+    "CharacterId": 1137,
+    "Url": "https://umamusu.wiki/w/images/a/a1/Game_Asset_chara_stand_1137_113701.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 113801,
+    "CharacterId": 1138,
+    "Url": "https://umamusu.wiki/w/images/e/eb/Game_Asset_chara_stand_1138_113801.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 113901,
+    "CharacterId": 1139,
+    "Url": "https://umamusu.wiki/w/images/b/bb/Game_Asset_chara_stand_1139_113901.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 114001,
+    "CharacterId": 1140,
+    "Url": "https://umamusu.wiki/w/images/f/f2/Game_Asset_chara_stand_1140_114001.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 114101,
+    "CharacterId": 1141,
+    "Url": "https://umamusu.wiki/w/images/3/3e/Game_Asset_chara_stand_1141_114101.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 114201,
+    "CharacterId": 1142,
+    "Url": "https://umamusu.wiki/w/images/8/82/Game_Asset_chara_stand_1142_114201.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 114301,
+    "CharacterId": 1143,
+    "Url": "https://umamusu.wiki/w/images/5/58/Game_Asset_chara_stand_1143_114301.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 114401,
+    "CharacterId": 1144,
+    "Url": "https://umamusu.wiki/w/images/f/f9/Game_Asset_chara_stand_1144_114401.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 114501,
+    "CharacterId": 1145,
+    "Url": "https://umamusu.wiki/w/images/3/3f/Game_Asset_chara_stand_1145_114501.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 114601,
+    "CharacterId": 1146,
+    "Url": "https://umamusu.wiki/w/images/2/24/Game_Asset_chara_stand_1146_114601.png",
+    "Style": "stand"
+  },
+  {
+    "DressId": 114801,
+    "CharacterId": 1148,
+    "Url": "",
+    "Style": "stand"
+  },
+  {
+    "DressId": 114901,
+    "CharacterId": 1149,
+    "Url": "https://umamusu.wiki/w/images/5/55/Game_Asset_chara_stand_1149_114901.png",
+    "Style": "stand"
+  }
+]

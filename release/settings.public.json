@@ -1,0 +1,18 @@
+{
+  "ApplicationId": "1563519446503522344",
+  "GameDirectory": "",
+  "WelcomeDismissed": false,
+  "GameIntegrationMode": "Standalone",
+  "ConcertAudioMode": "Original",
+  "ConcertAllowDuplicates": false,
+  "ConcertVoice1": 0,
+  "ConcertVoice2": 0,
+  "StandaloneWindowsMediaControls": true,
+  "StandaloneSeekBarMode": "Paused",
+  "ConcertPreferOriginalCover": true,
+  "ManualCharacter": "",
+  "ManualCharacterId": "",
+  "ConcertArtwork": {},
+  "ConcertOutfitPortraits": {},
+  "CareerPortraitAssets": {}
+}

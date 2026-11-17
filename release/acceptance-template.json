@@ -1,0 +1,176 @@
+[
+  {
+    "group": "installation",
+    "check": "The official in-app update feed matches this companion and completes download, install, launch verification and recovery",
+    "status": "untested",
+    "evidence": null
+  },
+  {
+    "group": "installation",
+    "check": "DMM update at switch and at launch keeps the game usable and allows uninstall in basic presence mode",
+    "status": "untested",
+    "evidence": null
+  },
+  {
+    "group": "concert",
+    "check": "Standalone duplicate casting can be enabled, starts a concert with the selected duplicates, and can be disabled",
+    "status": "untested",
+    "evidence": null
+  },
+  {
+    "group": "concert",
+    "check": "overlay actual drag, outside bounds and interrupted drag",
+    "status": "untested",
+    "evidence": null
+  },
+  {
+    "group": "concert",
+    "check": "rapid repeated forward/backward seeks and pause preservation",
+    "status": "untested",
+    "evidence": null
+  },
+  {
+    "group": "concert",
+    "check": "VOLTAGE resumed vocal/instrumental synchronization",
+    "status": "untested",
+    "evidence": null
+  },
+  {
+    "group": "concert",
+    "check": "Beyond resumed vocal/instrumental synchronization",
+    "status": "untested",
+    "evidence": null
+  },
+  {
+    "group": "concert",
+    "check": "song completion, scene exit and reopening",
+    "status": "untested",
+    "evidence": null
+  },
+  {
+    "group": "concert",
+    "check": "Windows controls and single overlay/media ownership",
+    "status": "untested",
+    "evidence": null
+  },
+  {
+    "group": "presence",
+    "check": "Home and career",
+    "status": "untested",
+    "evidence": null
+  },
+  {
+    "group": "presence",
+    "check": "normal and bare Legacy",
+    "status": "untested",
+    "evidence": null
+  },
+  {
+    "group": "presence",
+    "check": "race and skipped results",
+    "status": "untested",
+    "evidence": null
+  },
+  {
+    "group": "presence",
+    "check": "fair rotation in three slots and duplicate identities",
+    "status": "untested",
+    "evidence": null
+  },
+  {
+    "group": "presence",
+    "check": "official margins and winner wording",
+    "status": "untested",
+    "evidence": null
+  },
+  {
+    "group": "presence",
+    "check": "English/Japanese desktop tooltips",
+    "status": "untested",
+    "evidence": null
+  },
+  {
+    "group": "presence",
+    "check": "phone artwork and tooltips",
+    "status": "untested",
+    "evidence": null
+  },
+  {
+    "group": "installation",
+    "check": "clean legitimate game installation with no Hachimi history",
+    "status": "untested",
+    "evidence": null
+  },
+  {
+    "group": "installation",
+    "check": "discovery and Browse from extracted package",
+    "status": "untested",
+    "evidence": null
+  },
+  {
+    "group": "installation",
+    "check": "mode switch while running leaves the active loader unchanged",
+    "status": "untested",
+    "evidence": null
+  },
+  {
+    "group": "installation",
+    "check": "interrupted install recovery and uninstall",
+    "status": "untested",
+    "evidence": null
+  },
+  {
+    "group": "installation",
+    "check": "full portable uninstall and reinstall from a fresh ZIP extraction",
+    "status": "untested",
+    "evidence": null
+  },
+  {
+    "group": "installation",
+    "check": "supported Hachimi restoration launch",
+    "status": "untested",
+    "evidence": null
+  },
+  {
+    "group": "installation",
+    "check": "simulated update forwards current engine and refuses hooks",
+    "status": "untested",
+    "evidence": null
+  },
+  {
+    "group": "performance",
+    "check": "combined private memory at most 150 MiB",
+    "status": "untested",
+    "evidence": null
+  },
+  {
+    "group": "performance",
+    "check": "five-minute menu total CPU below one percent",
+    "status": "untested",
+    "evidence": null
+  },
+  {
+    "group": "performance",
+    "check": "visible-overlay added frame time p95 below one millisecond",
+    "status": "untested",
+    "evidence": null
+  },
+  {
+    "group": "publication",
+    "check": "catalog and bundled-branding provenance review",
+    "status": "untested",
+    "evidence": null
+  },
+  {
+    "group": "publication",
+    "check": "complete dependency and license review",
+    "status": "untested",
+    "evidence": null
+  },
+  {
+    "group": "publication",
+    "check": "final extracted-package installation and rollback",
+    "status": "untested",
+    "evidence": null
+  }
+]
