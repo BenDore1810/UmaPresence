@@ -10,7 +10,7 @@ if (-not $CompilerPath) { $CompilerPath = Join-Path $projectRoot '.tools/zig/zig
 if (-not $OutputDirectory) { $OutputDirectory = Join-Path $projectRoot 'dist/public-native' }
 $OutputDirectory = [IO.Path]::GetFullPath($OutputDirectory)
 New-Item -ItemType Directory -Force $OutputDirectory | Out-Null
-$env:ZIG_GLOBAL_CACHE_DIR = Join-Path $projectRoot '.tools/zig-cache'
+if (-not $env:ZIG_GLOBAL_CACHE_DIR) { $env:ZIG_GLOBAL_CACHE_DIR = Join-Path $projectRoot '.tools/zig-cache' }
 & (Join-Path $projectRoot 'bridge/build.ps1') -CompilerPath $CompilerPath -SdkLibraryPath $SdkLibraryPath -OutputDirectory $OutputDirectory
 if ($LASTEXITCODE -ne 0) { throw 'Bridge compilation failed.' }
 $sourceNames = @(

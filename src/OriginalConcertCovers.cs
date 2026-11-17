@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -54,22 +53,11 @@ namespace UmapyonPresence
         }
         internal static string Source(int id)
         {
-            lock (sync) { Load(); OriginalConcertCover cover; return covers.TryGetValue(id.ToString(), out cover) && cover != null && ValidUrl(cover.Url) ? cover.Source + " • " + cover.Url : "Original cover unavailable for song " + id; }
+            lock (sync) { Load(); OriginalConcertCover cover; return covers.TryGetValue(id.ToString(), out cover) && cover != null && ValidUrl(cover.Url) ? cover.Source + " 窶｢ " + cover.Url : "Original cover unavailable for song " + id; }
         }
-        private sealed class CoverWebClient : WebClient
+        private static Task<string> Fetch(string query)
         {
-            internal CoverWebClient() { Encoding = Encoding.UTF8; Headers[HttpRequestHeader.UserAgent] = "UmaPresence/0.1 (original song artwork; umamusu.wiki)"; }
-            protected override WebRequest GetWebRequest(Uri address) { var request = base.GetWebRequest(address); request.Timeout = 8000; return request; }
-        }
-        private static async Task<string> Fetch(string query)
-        {
-            using (var client = new CoverWebClient()) {
-                var download = client.DownloadStringTaskAsync("https://umamusu.wiki/w/api.php?action=query&format=json&" + query);
-                if (await Task.WhenAny(download, Task.Delay(8000)) != download) { client.CancelAsync(); throw new IOException("Original cover lookup timed out"); }
-                string text = await download;
-                if (text.Length > 1024 * 1024) throw new IOException("Original cover lookup response too large");
-                return text;
-            }
+            return ArtworkDownload.WikiText("https://umamusu.wiki/w/api.php?action=query&format=json&" + query);
         }
         internal static string CoverFile(string json, SongEntry song)
         {

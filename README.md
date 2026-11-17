@@ -2,12 +2,12 @@
 
 Discord Rich Presence for *Umamusume: Pretty Derby* (JP DMM) on Windows.
 
-[![Release](https://img.shields.io/github/v/release/BenDore1810/UmaPresence?include_prereleases&label=release)](https://github.com/BenDore1810/UmaPresence/releases/tag/v0.1.0-beta.1)
+[![Release](https://img.shields.io/github/v/release/BenDore1810/UmaPresence?include_prereleases&label=release)](https://github.com/BenDore1810/UmaPresence/releases)
 ![Platform](https://img.shields.io/badge/platform-Windows%20x64-0078D4)
 ![.NET Framework](https://img.shields.io/badge/.NET%20Framework-4.8-512BD4)
 [![License](https://img.shields.io/badge/license-GPL--3.0-green)](LICENSE)
 
-UmaPresence follows what you are doing in the game and updates your Discord activity card as you play. Show your friends which race you are in, whose Legacy you are viewing, or who is on stage in Live Theater. [Download the Windows prerelease](https://github.com/BenDore1810/UmaPresence/releases/tag/v0.1.0-beta.1).
+UmaPresence follows what you are doing in the game and updates your Discord activity card as you play. Show your friends which race you are in, whose Legacy you are viewing, or who is on stage in Live Theater. [Download the Windows prerelease](https://github.com/BenDore1810/UmaPresence/releases).
 
 > **Unofficial third-party app.** Rich Presence reads what is happening in the game and sends it to Discord. Setup loads a bridge in the game through Hachimi Edge or Standalone. Standalone also offers optional controls for concert playback and casting. Proceed with caution, especially after a game update.
 
@@ -63,7 +63,7 @@ The game, the official engine, the Cellar helper, and Hachimi are obtained separ
 
 ## Installation
 
-Download the Windows app ZIP from the [public prerelease](https://github.com/BenDore1810/UmaPresence/releases/tag/v0.1.0-beta.1). This prerelease uses manual updates from GitHub Releases. See `acceptance.json` in the ZIP for the checks that are still pending.
+Download the Windows app ZIP from the [public prerelease](https://github.com/BenDore1810/UmaPresence/releases). This prerelease uses manual updates from GitHub Releases. See `acceptance.json` in the ZIP for the checks that are still pending.
 
 1. Extract the entire ZIP into a new, writable folder and run `UmaPresence.exe`.
 2. On first launch, choose **Set up game integration** to confirm the detected game folder, or **Skip for now** to open Overview. Use **Browse…** in Game integration if the folder is blank or you want a different one.
@@ -113,6 +113,16 @@ Close the game before switching integrations or uninstalling. The **Game integra
 | **Return to stock DMM** | Changes how the game starts and keeps saved Hachimi files for later |
 
 Keep the original ZIP for reinstalling into a fresh folder, and extract each copy into its own folder so its package files can be removed separately from your other files. If removal was interrupted, close the game and click **Full uninstall…** again. An active Hachimi loader and translation files stay in place.
+
+## Privacy and network
+
+UmaPresence sends activity and artwork URLs to the Discord desktop client over local IPC. No Discord token is required. Missing outfit portraits and song covers can trigger HTTPS requests to Umamusume Wiki. Discord can retrieve artwork through the wsrv.nl image proxy. Standalone setup can download the hash-verified Cellar helper from GitHub. This prerelease uses manual updates from GitHub Releases.
+
+Screen capture and OCR are disabled by default. If enabled, recognition runs locally. The automatic `status.json` summary omits raw OCR and game paths. Explicit diagnostic reports may contain paths and game details. Review them before sharing. The app keeps `presence.log` and one previous managed log. The separate Standalone startup log stops growing near 64 KiB.
+
+Overview shows DMM playtime tracked locally while UmaPresence can see the running game. Tracking starts with this build. To show the total on Discord, enable **Show tracked playtime on Discord's small artwork tooltip** in Presence and hover over the small image on the activity card. It replaces that image's regular tooltip and is off by default. Copy `playtime.json` to a new extracted copy to carry over your total.
+
+For private reporting instructions, see the repository's [security policy](https://github.com/BenDore1810/UmaPresence/security/policy).
 
 ## Troubleshooting and diagnostics
 

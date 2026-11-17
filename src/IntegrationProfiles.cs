@@ -38,9 +38,13 @@ namespace UmapyonPresence
     }
     internal static partial class IntegrationProfiles
     {
-        // Tests interrupt durable transaction boundaries; never enabled by settings.
+#if TESTS
         internal static Action<string> Fault;
-        private static void Boundary(string name) { if (Fault != null) Fault(name); }
+        private static void Boundary(string name) { Fault?.Invoke(name); }
+#else
+        [Conditional("TESTS")]
+        private static void Boundary(string name) { }
+#endif
         internal static string Hash(string path) { using (var input = File.OpenRead(path)) using (var sha = SHA256.Create()) return BitConverter.ToString(sha.ComputeHash(input)).Replace("-", "").ToLowerInvariant(); }
         private static string Root(string game) { if (!GameInstallationDiscovery.Valid(game)) throw new IOException("Choose a verified JP DMM installation first."); return Contained(game, "umapresence"); }
         private static string Contained(string game, string relative)

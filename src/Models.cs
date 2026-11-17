@@ -19,6 +19,7 @@ namespace UmapyonPresence
         public string ApplicationId { get; set; } = ReleasePolicy.PublicRelease ? "1563519446503522344" : "954453106765225995";
         public bool ScreenDetection { get; set; } = false;
         public bool OcrDetection { get; set; } = false;
+        public bool ShowPlaytimeOnDiscord { get; set; }
         public int ScanIntervalSeconds { get; set; } = 8;
         public int UpdateIntervalSeconds { get; set; } = 15;
         public string OcrLanguage { get; set; } = "auto";
@@ -54,9 +55,41 @@ namespace UmapyonPresence
         public Dictionary<string, string> CareerPortraitAssets { get; set; } = new Dictionary<string, string>();
 
         public static string FilePath { get { return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "settings.json"); } }
-        public static Settings Load()
+        internal bool RequiresFolderConfirmation;
+        internal bool RecoveredSettings;
+
+        public static Settings Load() { return Load(FilePath); }
+
+        internal static Settings Load(string path)
         {
-            Settings result = File.Exists(FilePath) ? Json.Decode<Settings>(File.ReadAllText(FilePath, Encoding.UTF8)) : new Settings();
+            try { return Read(path); }
+            catch (FileNotFoundException) when (!File.Exists(path + ".previous")) { return new Settings(); }
+            catch (Exception error) when (IsInvalidSettings(error) || error is FileNotFoundException)
+            {
+                if (File.Exists(path)) File.Copy(path, path + ".corrupt", overwrite: true);
+                try
+                {
+                    Settings backup = Read(path + ".previous");
+                    backup.RecoveredSettings = true;
+                    backup.RequiresFolderConfirmation = !GameInstallationDiscovery.Valid(backup.GameDirectory);
+                    if (!backup.RequiresFolderConfirmation) AtomicText.Write(path, Json.Encode(backup));
+                    return backup;
+                }
+                catch (Exception backupError) when (IsInvalidSettings(backupError) || backupError is FileNotFoundException)
+                {
+                    return new Settings { RequiresFolderConfirmation = true };
+                }
+            }
+        }
+
+        private static bool IsInvalidSettings(Exception error)
+        {
+            return error is ArgumentException || error is InvalidOperationException || error is InvalidDataException;
+        }
+
+        private static Settings Read(string path)
+        {
+            Settings result = Json.Decode<Settings>(File.ReadAllText(path, Encoding.UTF8));
             if (result == null || result.ApplicationId == null || result.ApplicationId.Length < 5 || !result.ApplicationId.All(char.IsDigit))
                 throw new InvalidDataException("settings.json: ApplicationId must be a Discord application ID.");
             result.ScanIntervalSeconds = Math.Max(5, Math.Min(60, result.ScanIntervalSeconds));
@@ -72,7 +105,49 @@ namespace UmapyonPresence
             if (result.ProcessNames.Length == 0) result.ProcessNames = new[] { "umamusume" };
             return result;
         }
-        public void Save() { File.WriteAllText(FilePath, Json.Encode(this), new UTF8Encoding(false)); }
+        public void Save() { Save(FilePath); }
+
+        internal void Save(string path)
+        {
+            if (RequiresFolderConfirmation) throw new InvalidOperationException("Confirm your game folder first to recover your settings.");
+            string backup = null;
+            try { Read(path); backup = path + ".previous"; }
+            catch (Exception error) when (IsInvalidSettings(error) || error is FileNotFoundException) { }
+            AtomicText.Write(path, Json.Encode(this), backup);
+        }
+    }
+
+    internal static class AtomicText
+    {
+        private static readonly object Sync = new object();
+
+        internal static void Write(string path, string text, string backup = null)
+        {
+            lock (Sync)
+            {
+                string temporary = path + ".new";
+                bool created = false;
+                try
+                {
+                    using (var stream = new FileStream(temporary, FileMode.Create, FileAccess.Write, FileShare.None, 4096, FileOptions.WriteThrough))
+                    {
+                        created = true;
+                        byte[] bytes = Encoding.UTF8.GetBytes(text);
+                        stream.Write(bytes, 0, bytes.Length);
+                        stream.Flush(true);
+                    }
+                    if (File.Exists(path)) File.Replace(temporary, path, backup);
+                    else File.Move(temporary, path);
+                }
+                finally
+                {
+                    if (created && File.Exists(temporary))
+                    {
+                        try { File.Delete(temporary); } catch (IOException) { } catch (UnauthorizedAccessException) { }
+                    }
+                }
+            }
+        }
     }
 
     internal sealed class ActivityState
@@ -209,7 +284,6 @@ namespace UmapyonPresence
     internal static class Log
     {
         private static readonly object sync = new object();
-        private static bool removedOldLog;
         public static readonly string FilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "presence.log");
         public static void Write(string message)
         {
@@ -217,15 +291,14 @@ namespace UmapyonPresence
             {
                 try
                 {
-                    if (!removedOldLog)
-                    {
-                        try { File.Delete(FilePath + ".old"); removedOldLog = true; }
-                        catch (IOException) { }
-                        catch (UnauthorizedAccessException) { }
-                    }
                     string line = DateTimeOffset.Now.ToString("yyyy-MM-dd HH:mm:ss zzz") + " " + message + Environment.NewLine;
-                    if (File.Exists(FilePath) && new FileInfo(FilePath).Length > 256 * 1024) File.WriteAllText(FilePath, line, Encoding.UTF8);
-                    else File.AppendAllText(FilePath, line, Encoding.UTF8);
+                    if (File.Exists(FilePath) && new FileInfo(FilePath).Length + Encoding.UTF8.GetByteCount(line) > 256 * 1024)
+                    {
+                        string old = FilePath + ".old";
+                        if (File.Exists(old)) File.Replace(FilePath, old, null);
+                        else File.Move(FilePath, old);
+                    }
+                    File.AppendAllText(FilePath, line, Encoding.UTF8);
                 }
                 catch { }
             }

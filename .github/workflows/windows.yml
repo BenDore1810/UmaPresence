@@ -1,0 +1,29 @@
+name: Windows release checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned Zig
+        shell: pwsh
+        run: choco install zig --version=0.13.0 --yes --no-progress
+      - name: Build and verify public candidate
+        shell: pwsh
+        run: |
+          $zig = (Get-Command zig.exe).Source
+          $sdk = Get-ChildItem -Directory "${env:ProgramFiles(x86)}/Windows Kits/10/Lib" |
+            Where-Object { Test-Path (Join-Path $_.FullName 'um/x64/kernel32.lib') } |
+            Sort-Object { [version]$_.Name } -Descending | Select-Object -First 1
+          if (-not $sdk) { throw 'Windows SDK library not found' }
+          ./release/build.ps1 -CompilerPath $zig -SdkLibraryPath (Join-Path $sdk.FullName 'um/x64')
+          ./tools/check_release_binary.ps1 -Path dist/public-build/UmaPresence.exe
+          ./tools/check_standalone.ps1 -FixturesOnly -CompilerPath $zig

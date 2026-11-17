@@ -152,11 +152,13 @@ namespace UmapyonPresence
             page.Controls.Add(originals);
             page.Controls.Add(SettingsUi.Text("Keep this checked for original concert covers. To use a custom cover, register it in Data & artwork → Song covers, then clear this box and save. Songs without a custom cover still use the original where available."));
             page.Controls.Add(lookup);
+            var playtime = SettingsUi.Check("Show tracked playtime on Discord's small artwork tooltip", settings.ShowPlaytimeOnDiscord);
+            page.Controls.Add(playtime);
             page.Controls.Add(SettingsUi.Section("Activity detection")); page.Controls.Add(ocr); page.Controls.Add(SettingsUi.Text("Screen text is processed locally. Native game data remains the preferred source."));
             var savePresence = SettingsUi.Button("Save changes", () => Run(() => {
                 var before = Json.Decode<Settings>(Json.Encode(settings));
-                settings.ShowCharacter = characters.Checked; settings.ConcertRotatePortraits = rotate.Checked; settings.ConcertPortraitIntervalSeconds = (int)seconds.Value; settings.ConcertPreferOriginalCover = originals.Checked; settings.AutoRefreshOutfitPortraits = lookup.Checked; settings.OcrDetection = ocr.Checked;
-                try { settings.Save(); } catch { settings.ShowCharacter = before.ShowCharacter; settings.ConcertRotatePortraits = before.ConcertRotatePortraits; settings.ConcertPortraitIntervalSeconds = before.ConcertPortraitIntervalSeconds; settings.ConcertPreferOriginalCover = before.ConcertPreferOriginalCover; settings.AutoRefreshOutfitPortraits = before.AutoRefreshOutfitPortraits; settings.OcrDetection = before.OcrDetection; throw; }
+                settings.ShowCharacter = characters.Checked; settings.ConcertRotatePortraits = rotate.Checked; settings.ConcertPortraitIntervalSeconds = (int)seconds.Value; settings.ConcertPreferOriginalCover = originals.Checked; settings.AutoRefreshOutfitPortraits = lookup.Checked; settings.OcrDetection = ocr.Checked; settings.ShowPlaytimeOnDiscord = playtime.Checked;
+                try { settings.Save(); } catch { settings.ShowCharacter = before.ShowCharacter; settings.ConcertRotatePortraits = before.ConcertRotatePortraits; settings.ConcertPortraitIntervalSeconds = before.ConcertPortraitIntervalSeconds; settings.ConcertPreferOriginalCover = before.ConcertPreferOriginalCover; settings.AutoRefreshOutfitPortraits = before.AutoRefreshOutfitPortraits; settings.OcrDetection = before.OcrDetection; settings.ShowPlaytimeOnDiscord = before.ShowPlaytimeOnDiscord; throw; }
             }, "Saved. Presence preferences apply now; Discord may take a moment to display the update."));
             page.Controls.Add(SettingsUi.Section("Manual override"));
             var activity = SettingsUi.Choices(new[] { "Auto", "Home", "Training", "Race", "Story", "Live", "Gacha" }, actions.Activity()); page.Controls.Add(activity);

@@ -4,7 +4,9 @@ $projectRoot = $PSScriptRoot
 $outputDir = if ($OutputDirectory) { [IO.Path]::GetFullPath($OutputDirectory) } else { Join-Path $projectRoot 'dist' }
 New-Item -ItemType Directory -Force -Path $outputDir | Out-Null
 $frameworkDir = Join-Path $env:WINDIR 'Microsoft.NET\Framework64\v4.0.30319'
-$referenceDir = Join-Path ${env:ProgramFiles(x86)} 'Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2'
+$referenceBase = Join-Path ${env:ProgramFiles(x86)} 'Reference Assemblies\Microsoft\Framework\.NETFramework'
+$referenceDir = Join-Path $referenceBase 'v4.5.2'
+if (-not (Test-Path -LiteralPath (Join-Path $referenceDir 'Facades'))) { $referenceDir = Join-Path $referenceBase 'v4.8' }
 $sdkDir = Join-Path ${env:ProgramFiles(x86)} 'Windows Kits\10\UnionMetadata'
 $winmd = Get-ChildItem -Path $sdkDir -Filter Windows.winmd -Recurse | Where-Object { $_.Directory.Name -match '^10\.' } | Sort-Object FullName -Descending | Select-Object -First 1
 if (-not $winmd) { throw 'Windows 10 SDK metadata is required to build (not to run).' }
@@ -14,8 +16,10 @@ if (-not $compiler) { throw '.NET SDK is required to build (not to run).' }
 $references = @('mscorlib.dll', 'System.dll', 'System.Core.dll', 'System.Drawing.dll', 'System.Windows.Forms.dll', 'System.Web.Extensions.dll', 'System.Runtime.WindowsRuntime.dll', 'System.IO.Compression.dll') | ForEach-Object { '/r:' + (Join-Path $frameworkDir $_) }
 $references += Get-ChildItem -LiteralPath (Join-Path $referenceDir 'Facades') -Filter *.dll | ForEach-Object { '/r:' + $_.FullName }
 $references += '/r:' + $winmd.FullName
-$sources = Get-ChildItem -LiteralPath (Join-Path $projectRoot 'src') -Filter *.cs | ForEach-Object FullName
-$commonArgs = @('/nologo', '/noconfig', '/nostdlib+', '/langversion:latest', '/optimize+', '/platform:x64', '/utf8output', '/warn:4') + $references + $sources
+$sources = Get-ChildItem -LiteralPath (Join-Path $projectRoot 'src') -Filter *.cs
+$production = $sources | Where-Object { $_.Name -notlike '*Tests.cs' -and $_.Name -notin @('CoverExport.cs', 'PortraitBaker.cs') } | ForEach-Object FullName
+$testSources = $sources | ForEach-Object FullName
+$commonArgs = @('/nologo', '/noconfig', '/nostdlib+', '/langversion:latest', '/optimize+', '/platform:x64', '/utf8output', '/warn:4') + $references
 if ($PublicRelease) { $commonArgs += @('/deterministic+', ('/pathmap:' + $projectRoot + '=/_/umapresence')) }
 if ($PublicRelease) { $commonArgs += '/define:PUBLIC_RELEASE' }
 if ($PisaDev) {
@@ -62,10 +66,10 @@ $commonArgs += '/resource:' + (Join-Path $projectRoot 'racing-portraits.json') +
 $commonArgs += '/resource:' + (Join-Path $projectRoot 'outfit-catalog.json') + ',outfit-catalog.json'
 if (-not $PublicRelease -or $PisaDev) { $commonArgs += '/resource:' + (Join-Path $projectRoot 'assets\special-week.png') + ',special-week.png' }
 if (-not $TestsOnly) {
-    & (Join-Path $dotnetDir 'dotnet.exe') $compiler.FullName @commonArgs /target:winexe /main:UmapyonPresence.Program ('/out:' + (Join-Path $outputDir 'UmaPresence.exe'))
+    & (Join-Path $dotnetDir 'dotnet.exe') $compiler.FullName @commonArgs @production /target:winexe /main:UmapyonPresence.Program ('/out:' + (Join-Path $outputDir 'UmaPresence.exe'))
     if ($LASTEXITCODE -ne 0) { throw 'App compilation failed.' }
 }
-& (Join-Path $dotnetDir 'dotnet.exe') $compiler.FullName @commonArgs /target:exe /main:UmapyonPresence.Tests ('/out:' + (Join-Path $outputDir 'UmapyonPresence.Tests.exe'))
+& (Join-Path $dotnetDir 'dotnet.exe') $compiler.FullName @commonArgs @testSources /define:TESTS /target:exe /main:UmapyonPresence.Tests ('/out:' + (Join-Path $outputDir 'UmapyonPresence.Tests.exe'))
 if ($LASTEXITCODE -ne 0) { throw 'Test compilation failed.' }
 Copy-Item -LiteralPath (Join-Path $projectRoot 'app.config') -Destination (Join-Path $outputDir 'UmaPresence.exe.config') -Force
 Copy-Item -LiteralPath (Join-Path $projectRoot 'app.config') -Destination (Join-Path $outputDir 'UmapyonPresence.Tests.exe.config') -Force

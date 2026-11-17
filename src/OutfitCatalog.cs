@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Globalization;
 using System.Linq;
-using System.Net;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -79,10 +78,10 @@ namespace UmapyonPresence
                 if (cards.Count > 0) cardDresses = cards;
                 mainCounts.Clear(); foreach (var pair in counts) mainCounts[pair.Key] = pair.Value;
                 masterStamp = stamp;
-                Status = "Game catalog refreshed • " + entries.Count + " racing outfits";
+                Status = "Game catalog refreshed 窶｢ " + entries.Count + " racing outfits";
                 Log.Write(Status);
             }
-            catch (Exception ex) { Status = "Using bundled catalog • " + ex.Message; Log.Write(Status); }
+            catch (Exception ex) { Status = "Using bundled catalog 窶｢ " + ex.Message; Log.Write(Status); }
             finally { if (database != IntPtr.Zero) Sqlite.Close(database); }
         }
         public static int MainCount(int songId)
@@ -156,11 +155,9 @@ namespace UmapyonPresence
             foreach (var entry in pending) entry.NextLookup = DateTime.UtcNow.AddHours(24);
             try
             {
-                ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12;
                 string titles = string.Join("|", pending.Select(e => "File:Game Asset chara stand " + e.CharacterId + " " + e.DressId.ToString("D6") + ".png"));
                 string url = "https://umamusu.wiki/w/api.php?action=query&format=json&prop=imageinfo&iiprop=url&titles=" + Uri.EscapeDataString(titles);
-                string json;
-                using (var web = new PortraitWebClient()) json = await web.DownloadStringTaskAsync(url);
+                string json = await ArtworkDownload.WikiText(url);
                 int updated = ApplyLookup(json, pending);
                 if (updated > 0)
                 {
@@ -196,11 +193,7 @@ namespace UmapyonPresence
             try { int result; while ((result = Sqlite.Step(statement)) == 100) row(statement); if (result != 101) throw new IOException("Game metadata read interrupted"); }
             finally { Sqlite.Finalize(statement); }
         }
-        private sealed class PortraitWebClient : WebClient
-        {
-            public PortraitWebClient() { Headers[HttpRequestHeader.UserAgent] = "UmaPresence/0.1 (personal artwork catalog)"; Encoding = Encoding.UTF8; }
-            protected override WebRequest GetWebRequest(Uri address) { var request = base.GetWebRequest(address); request.Timeout = 8000; return request; }
-        }
+
         private sealed class WikiResponse { public WikiQuery query { get; set; } }
         private sealed class WikiQuery { public Dictionary<string, WikiPage> pages { get; set; } }
         private sealed class WikiPage { public string title { get; set; } public WikiImage[] imageinfo { get; set; } }
