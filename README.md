@@ -27,10 +27,19 @@ UmaPresence follows what you are doing in the game and updates your Discord acti
 
 ## Preview
 
-| Live Theater · STARTING FORCE | Legacy · Mayano Top Gun |
-| :---: | :---: |
-| <img src="assets/discord-live-concert.gif" alt="STARTING FORCE on Discord, showing Almond Eye followed by the Gran Alegria and Daring Tact hover tooltips" width="400"> | <img src="assets/discord-legacy.png" alt="Mayano Top Gun's Legacy activity card on Discord" width="400"> |
-| The card shows the song, cast, and playback progress. The cast portrait rotates, and hovering over it reveals the singer's costume and voice actor. | Discord shows the Uma's portrait, rank, evaluation score, and skill count. This one is US7 with a score of 72,728 and 79 skills. |
+### Live Theater · STARTING FORCE
+
+![STARTING FORCE on Discord, showing Almond Eye followed by the Gran Alegria and Daring Tact hover tooltips](assets/discord-live-concert.gif)
+
+The card shows the song, cast, and playback progress. Hover over the rotating cast portrait to see the singer's costume and voice actor.
+
+### Legacy · Mayano Top Gun
+
+![Mayano Top Gun's Legacy activity card on Discord](assets/discord-legacy.png)
+
+Discord shows the Uma's portrait, rank, evaluation score, and skill count. This one is US7 with a score of 72,728 and 79 skills.
+
+And more to come.
 
 ## Features
 
