@@ -4,6 +4,10 @@ UmaPresence shows what you’re doing in **Umamusume (JP DMM)** on your Discord 
 
 **Windows x64 · JP DMM · Discord desktop**
 
+![STARTING FORCE on Discord, showing Almond Eye followed by the Gran Alegria and Daring Tact hover tooltips](assets/discord-live-concert.gif)
+
+![Mayano Top Gun’s Legacy activity card on Discord](assets/discord-legacy.png)
+
 ## What Discord can show
 
 - **Home and menus.** Home, Veterans, character and support card collections, deck editing, and Scout results.
@@ -11,11 +15,13 @@ UmaPresence shows what you’re doing in **Umamusume (JP DMM)** on your Discord 
 - **Uma profiles.** Legacy, Bare Legacy, Practice Partners, and Rivals, with rank, costumes, and profile details where available.
 - **Races.** Preparation, live standings, and results for Career races, Champions Meeting, Room Matches, League of Heroes, and Master Challenge.
 - **Live Theater.** Concert selection, song title, cast, and playback progress.
-- **Story, Story Events, Missions, and more…**
+- **Story, Story Events, and Missions.**
+
+And more…
 
 ## Download and set up
 
-Get the Windows app ZIP from GitHub Releases. The source is available in this repository. See [BUILD.md](BUILD.md) if you want to build it yourself.
+The Windows app ZIP will appear on [GitHub Releases](https://github.com/BenDore1810/UmaPresence/releases) when the prerelease is published. See [BUILD.md](BUILD.md) if you want to build from source.
 
 This build is a release candidate. See `acceptance.json` in the app ZIP for the checks that are still pending.
 

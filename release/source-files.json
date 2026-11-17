@@ -3,6 +3,8 @@
   ".gitignore.public",
   "LICENSE",
   "app.config",
+  "assets/discord-legacy.png",
+  "assets/discord-live-concert.gif",
   "assets/generate_icon.py",
   "assets/umapyon.ico",
   "assets/umapyon.png",
