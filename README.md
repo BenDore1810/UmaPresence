@@ -1,10 +1,20 @@
 # UmaPresence
 
-UmaPresence shows what you’re doing in **Umamusume (JP DMM)** on your Discord profile. It can show your current career, race, or concert, with extra details when someone hovers over the artwork.
+Show your friends which race you’re in, whose Legacy you’re viewing, or who’s on stage in Live Theater, right from your Discord profile. UmaPresence follows what you’re doing in **Umamusume: Pretty Derby (JP DMM)** and updates your activity card as you play.
 
 **Windows x64 · JP DMM · Discord desktop**
 
+UmaPresence started as an independent take on the Discord Rich Presence feature in KevinVG207’s [UmaLauncher](https://github.com/KevinVG207/UmaLauncher#better-discord-rich-presence-for-uma-musume).
+
+> **This is an unofficial third-party app.** Rich Presence reads what’s happening in the game and sends it to Discord. Setup loads a bridge in the game through Hachimi Edge or Standalone. Standalone also offers optional controls for concert playback and casting. Proceed with caution, especially after a game update.
+
+## See it in Discord
+
+**Live Theater · STARTING FORCE.** The card shows the song, cast, and playback progress. The cast portrait rotates, and hovering over it reveals the singer’s costume and voice actor.
+
 ![STARTING FORCE on Discord, showing Almond Eye followed by the Gran Alegria and Daring Tact hover tooltips](assets/discord-live-concert.gif)
+
+**Legacy · Mayano Top Gun.** Open a Legacy profile and Discord shows the Uma’s portrait, rank, evaluation score, and skill count. This one is US7 with a score of 72,728 and 79 skills.
 
 ![Mayano Top Gun’s Legacy activity card on Discord](assets/discord-legacy.png)
 
