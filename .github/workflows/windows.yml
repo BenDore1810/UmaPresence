@@ -12,7 +12,9 @@ jobs:
   package:
     runs-on: windows-2022
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6.0.3
+        with:
+          persist-credentials: false
       - name: Install pinned Zig
         shell: pwsh
         run: choco install zig --version=0.13.0 --yes --no-progress
