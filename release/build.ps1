@@ -1,4 +1,4 @@
-param([Parameter(Mandatory=$true)][string]$CompilerPath, [Parameter(Mandatory=$true)][string]$SdkLibraryPath, [string]$OutputDirectory, [string]$HelperPath, [string]$CompatibilityFeedConfig)
+param([Parameter(Mandatory=$true)][string]$CompilerPath, [Parameter(Mandatory=$true)][string]$SdkLibraryPath, [string]$OutputDirectory, [string]$HelperPath, [string]$CompatibilityFeedConfig, [string]$HachimiLoaderSha256, [string]$HachimiApphelpSha256)
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot
 $buildArgs = @{ PublicRelease=$true; OutputDirectory=(Join-Path $root 'dist/public-build') }
@@ -12,6 +12,8 @@ $testArgs = @('--public-release')
 if ($HelperPath) { $testArgs += [IO.Path]::GetFullPath($HelperPath) }
 & $tests @testArgs
 if ($LASTEXITCODE -ne 0) { throw 'Public policy checks failed' }
+& $tests --hardening-regression
+if ($LASTEXITCODE -ne 0) { throw 'Hardening regression failed' }
 if ($HelperPath) {
     $cache = Join-Path $root 'dist/public-build/dependencies'
     New-Item -ItemType Directory -Force $cache | Out-Null
@@ -27,5 +29,8 @@ if ($LASTEXITCODE -ne 0) { throw 'Native policy test failed' }
 if ($LASTEXITCODE -ne 0) { throw 'Release gate tests failed' }
 $arguments = @((Join-Path $PSScriptRoot 'package_public.py'), '--root', $root)
 if ($OutputDirectory) { $arguments += @('--output', $OutputDirectory) }
+if ($HachimiLoaderSha256 -or $HachimiApphelpSha256) {
+    $arguments += @('--hachimi-variant', 'V2', '--hachimi-loader-sha256', $HachimiLoaderSha256, '--hachimi-apphelp-sha256', $HachimiApphelpSha256)
+}
 & python @arguments
 if ($LASTEXITCODE -ne 0) { throw 'Public package gate failed' }

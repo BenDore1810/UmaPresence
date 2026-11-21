@@ -1,14 +1,14 @@
 using System.Reflection;
 
 [assembly: AssemblyVersion("0.1.0.0")]
-[assembly: AssemblyFileVersion("0.1.0.1")]
-[assembly: AssemblyInformationalVersion("0.1.0-beta.1")]
+[assembly: AssemblyFileVersion("0.1.0.2")]
+[assembly: AssemblyInformationalVersion("0.1.0-beta.2")]
 
 namespace UmapyonPresence
 {
     internal static class ReleasePolicy
     {
-        internal const string Version = "0.1.0-beta.1";
+        internal const string Version = "0.1.0-beta.2";
 #if PUBLIC_RELEASE
         internal static readonly bool PublicRelease = true;
 #else

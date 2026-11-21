@@ -59,6 +59,11 @@ namespace UmapyonPresence
             Native.SetProcessDPIAware();
             System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
             Console.OutputEncoding = new UTF8Encoding(false);
+            if (args.Contains("--hardening-regression"))
+            {
+                try { HardeningTests.Run(Check); Console.WriteLine(passed + " hardening checks passed."); return 0; }
+                catch (Exception error) { Console.Error.WriteLine(error); return 1; }
+            }
             if (args.Length == 1 && args[0] == "--standalone-update-regression") {
                 try { StandaloneUpdateTests.Run(); return 0; }
                 catch (Exception ex) { Console.Error.WriteLine(ex); return 1; }

@@ -1,4 +1,4 @@
-# v0.1.0-beta.1 candidate
+# v0.1.0-beta.2 candidate
 
 Target: JP DMM, Windows x64. Supported build fingerprints are in standalone/game-profile.json. One Discord application: 1563519446503522344.
 

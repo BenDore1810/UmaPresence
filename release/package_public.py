@@ -11,7 +11,7 @@ import zipfile
 from pathlib import Path
 from privacy_gate import scan_tree, scan_bytes
 
-VERSION='0.1.0-beta.1'
+VERSION='0.1.0-beta.2'
 PREFIX='UmaPresence-v'+VERSION
 
 def digest(data): return hashlib.sha256(data).hexdigest()

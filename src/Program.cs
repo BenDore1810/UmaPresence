@@ -17,24 +17,26 @@ namespace UmapyonPresence
     internal static class Program
     {
         internal static readonly string ControlPipe = "UmapyonPresence-" + WindowsIdentity.GetCurrent().User.Value;
-        internal static void SchedulePortableRemoval(Settings settings)
+        internal static void SchedulePortableRemoval(Settings settings, bool companionOnly = false)
         {
-            using (var cleanup = StartPortableRemoval(settings, Application.ExecutablePath, Process.GetCurrentProcess().Id)) { }
+            using (var cleanup = StartPortableRemoval(settings, Application.ExecutablePath, Process.GetCurrentProcess().Id, companionOnly)) { }
         }
 
-        internal static Process StartPortableRemoval(Settings settings, string executable, int pid)
+        internal static Process StartPortableRemoval(Settings settings, string executable, int pid, bool companionOnly = false)
         {
+            if (settings.RequiresFolderConfirmation && !companionOnly)
+                throw new InvalidOperationException("Confirm your game folder before full uninstall, or choose companion-only removal.");
             string root = Path.GetDirectoryName(Path.GetFullPath(executable));
             string manifest = Path.Combine(root, "checksums.json");
             var hashes = Json.Decode<System.Collections.Generic.Dictionary<string, string>>(File.ReadAllText(manifest));
             if (!hashes.ContainsKey("UmaPresence.exe") || !hashes.ContainsKey("settings.json")) throw new IOException("Extract the complete UmaPresence ZIP into its own folder first.");
             var files = new[] {
-                "UmaPresence.exe", "UmaPresence.exe.config", "settings.json", "checksums.json",
+                "UmaPresence.exe", "UmaPresence.exe.config", "settings.json", "settings.json.previous", "settings.json.corrupt", "settings.json.new", "playtime.json", "playtime.json.new", "checksums.json",
                 "LICENSE", "MinHook-LICENSE.txt", "README.md", "BUILD.md", "NOTICES.md", "RELEASE-NOTES.md", "CHECKLIST.md",
                 WelcomeDialog.WelcomeSheet, WelcomeDialog.GoodbyeSheet, WelcomeDialog.LocalArtworkMarker,
                 "acceptance.json", "release-manifest.json", "verification/native-policy-check.json",
                 "standalone/UnityPlayer.dll", "standalone/umapyon_bridge.dll", "standalone/game-profile.json", "standalone/loader-provenance.json",
-                "presence.log", "presence.log.old", "status.json", "release-smoke.json", "dependencies/cellar-v2.0.0.dll",
+                "presence.log", "presence.log.old", "status.json", "status.json.new", "release-smoke.json", "dependencies/cellar-v2.0.0.dll",
                 "outfit-images.cache.json", "original-cover-cache.json", "maintenance-history.json",
                 "diagnostic.txt", "live-diagnostic.txt", "race-paddock-diagnostics.json", "integration-replace.txt", "integration-prepare.txt"
             };
@@ -47,7 +49,7 @@ namespace UmapyonPresence
                 }
             }
             if ((File.GetAttributes(root) & FileAttributes.ReparsePoint) != 0 || IntegrationProfiles.Hash(executable) != hashes["UmaPresence.exe"]) throw new IOException("The extracted app could not be verified.");
-            if (!string.IsNullOrWhiteSpace(settings.GameDirectory)) IntegrationProfiles.UninstallCurrent(settings, fullRemoval: true);
+            if (!companionOnly && !string.IsNullOrWhiteSpace(settings.GameDirectory)) IntegrationProfiles.UninstallCurrent(settings, fullRemoval: true);
             const string startupKey = @"Software\Microsoft\Windows\CurrentVersion\Run";
             const string startupName = "UmapyonPresence";
             string startupCommand = "\"" + executable + "\"";
@@ -64,7 +66,7 @@ namespace UmapyonPresence
                 "try {\n" + (pid > 0 ? "$app=Get-Process -Id " + pid + " -ErrorAction SilentlyContinue\nif($app){Wait-Process -InputObject $app -Timeout 30}\n" : "") +
                 "function Check-Link($path){while($path -and $path.StartsWith($source,[StringComparison]::OrdinalIgnoreCase)){if((Test-Path -LiteralPath $path) -and ((Get-Item -LiteralPath $path -Force).Attributes -band [IO.FileAttributes]::ReparsePoint)){throw 'Uninstall found a linked path'}; $path=[IO.Path]::GetDirectoryName($path)}}\n" +
                 "foreach($file in $files){$path=Join-Path $source $file;Check-Link $path;if(Test-Path -LiteralPath $path -PathType Leaf){Remove-Item -LiteralPath $path -Force}}\n" +
-                "foreach($name in @('generated-artwork','generated-portraits')){$folder=Join-Path $source $name;Check-Link $folder;if(Test-Path -LiteralPath $folder -PathType Container){foreach($file in (Get-ChildItem -LiteralPath $folder -File -Force)){if($file.Name -match '^(concert_[0-9]+|portrait_[0-9]+_[0-9]+_frame_v2)\\.png$'){Check-Link $file.FullName;Remove-Item -LiteralPath $file.FullName -Force}}}}\n" +
+                "foreach($name in @('generated-artwork','generated-portraits')){$folder=Join-Path $source $name;Check-Link $folder;if(Test-Path -LiteralPath $folder -PathType Container){foreach($file in (Get-ChildItem -LiteralPath $folder -File -Force)){if($file.Name -match '^(concert_[0-9]+\\.png|portrait_[0-9]+_[0-9]+_frame_v2\\.(png|json))$'){Check-Link $file.FullName;Remove-Item -LiteralPath $file.FullName -Force}}}}\n" +
                 "foreach($name in @('standalone','dependencies','verification','generated-artwork','generated-portraits')){$folder=Join-Path $source $name;Check-Link $folder;if((Test-Path -LiteralPath $folder -PathType Container) -and !@(Get-ChildItem -LiteralPath $folder -Force).Count){[IO.Directory]::Delete($folder)}}\n" +
                 "if(!@(Get-ChildItem -LiteralPath $source -Force).Count){[IO.Directory]::Delete($source)}\n" +
                 "} catch { Add-Type -AssemblyName System.Windows.Forms; [void][Windows.Forms.MessageBox]::Show($_.Exception.Message,'UmaPresence uninstall'); exit 1 }";
@@ -161,7 +163,6 @@ namespace UmapyonPresence
         private readonly ConcertReader concertReader = new ConcertReader { EnableInspectionCompatibility = true };
         private readonly ConcertTracker concertTracker = new ConcertTracker();
         private readonly RaceTracker raceTracker = new RaceTracker();
-        private string lastPaddockDiagnostics;
         private readonly ConcertArtworkBuilder concertArtwork = new ConcertArtworkBuilder();
         private Task artworkTask;
         private Task portraitLookupTask;
@@ -177,6 +178,7 @@ namespace UmapyonPresence
         private bool busy, stopping, paused;
         private int gamePid;
         private long sessionStarted;
+        private readonly Playtime playtime = new Playtime(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "playtime.json"));
         private string gamePath = "Not detected";
         private string mode = "Auto";
         private ActivityState state = new ActivityState();
@@ -186,7 +188,7 @@ namespace UmapyonPresence
         private DateTime nextScan, nextConnect, nextUpdate;
         private DateTime lastAcknowledged;
         private DateTime lastScreenScan;
-        private string lastScreenText = "", screenStatus = "Waiting for game screen";
+        private string screenStatus = "Waiting for game screen";
         private bool gameForeground;
         private readonly ConcertPortraitRotation concertPortraitRotation = new ConcertPortraitRotation();
         private StandaloneMediaControls standaloneMedia;
@@ -201,19 +203,29 @@ namespace UmapyonPresence
         public PresenceApp(bool showTray, bool showStatus = false, bool showSettings = false, bool startHidden = false)
         {
             settings = Settings.Load();
-            if (!GameInstallationDiscovery.Valid(settings.GameDirectory)) { var installations = GameInstallationDiscovery.Find(settings); if (installations.Length == 1) { settings.GameDirectory = installations[0]; settings.Save(); } }
-            try { if (StandaloneConfiguration.ImportHachimiPreferences(settings)) { settings.Save(); Log.Write("Standalone concert preferences initialized; existing Hachimi duplicate-casting preference preserved."); } } catch (Exception ex) { Log.Write("Concert preference import: " + ex.Message); }
-            if (!File.Exists(Settings.FilePath)) settings.Save();
+            if (!settings.RequiresFolderConfirmation && !GameInstallationDiscovery.Valid(settings.GameDirectory)) { var installations = GameInstallationDiscovery.Find(settings); if (installations.Length == 1) { settings.GameDirectory = installations[0]; settings.Save(); } }
+            try { if (!settings.RequiresFolderConfirmation && StandaloneConfiguration.ImportHachimiPreferences(settings)) { settings.Save(); Log.Write("Standalone concert preferences initialized; existing Hachimi duplicate-casting preference preserved."); } } catch (Exception ex) { Log.Write("Concert preference import: " + ex.Message); }
+            if (!settings.RequiresFolderConfirmation && !File.Exists(Settings.FilePath)) settings.Save();
             dispatcher.CreateControl();
             standaloneMedia = new StandaloneMediaControls(dispatcher);
             concertSeekOverlay = new ConcertSeekOverlay();
             Log.Write("UmaPresence " + ReleasePolicy.Version + " started. Direct Discord IPC; game integration is configured separately.");
             if (showTray) CreateTray();
             timer.Tick += async (s, e) => await Tick();
+            UpdateStatus();
+            try { File.Delete(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "race-paddock-diagnostics.json")); }
+            catch (Exception error) when (error is IOException || error is UnauthorizedAccessException) { Log.Write("Could not remove the legacy paddock diagnostic."); }
             timer.Start();
             Task.Run((Action)ControlLoop);
+            if (settings.RequiresFolderConfirmation && showTray)
+                dispatcher.BeginInvoke((Action)(() => {
+                    ShowSettings();
+                    settingsWindow.Navigate("Game integration");
+                    settingsWindow.Saved("Settings could not be recovered. Confirm the game folder to save new settings.");
+                }));
+            else if (settings.RecoveredSettings) Log.Write("Recovered settings from the previous saved copy.");
             if (showStatus) dispatcher.BeginInvoke((Action)ShowStatus);
-            if (showSettings || (showTray && !showStatus && !startHidden && !settings.StartMinimized)) dispatcher.BeginInvoke((Action)(() => {
+            if (!settings.RequiresFolderConfirmation && (showSettings || (showTray && !showStatus && !startHidden && !settings.StartMinimized))) dispatcher.BeginInvoke((Action)(() => {
                 ShowSettings();
                 if (!ShouldShowWelcome(settings, showTray, showStatus, startHidden)) return;
                 bool setup = WelcomeDialog.ShowWelcome(settingsWindow, settings.GameDirectory);
@@ -265,6 +277,7 @@ namespace UmapyonPresence
             try
             {
                 var game = GameSession.Find(settings);
+                playtime.Observe(game?.ProcessId ?? 0);
                 var now = DateTime.UtcNow;
                 bool foreground = game != null && game.IsForeground;
                 if (foreground && !gameForeground) nextScan = DateTime.MinValue;
@@ -384,7 +397,7 @@ namespace UmapyonPresence
                                 lastScreenScan = now;
                                 if (settings.OcrDetection)
                                 {
-                                    try { lastScreenText = await reader.Read(screenshot, settings.OcrLanguage); observation = TextClassifier.Classify(lastScreenText); }
+                                    try { observation = TextClassifier.Classify(await reader.Read(screenshot, settings.OcrLanguage)); }
                                     catch (Exception ex) { Log.Write("Screen recognition skipped: " + ex.Message); }
                                 }
                                 if (observation == null) observation = PixelClassifier.Classify(screenshot);
@@ -409,6 +422,7 @@ namespace UmapyonPresence
                 if (discord.IsConnected)
                 {
                     object activity = state.ToActivity(settings, sessionStarted);
+                    if (settings.ShowPlaytimeOnDiscord) activity = playtime.AddToActivity(activity);
                     string payload = Json.Encode(activity);
                     if (payload != lastPayload && now >= nextUpdate)
                     {
@@ -426,7 +440,7 @@ namespace UmapyonPresence
                                 if (singerLine != lastSingerLine) { lastSingerLine = singerLine; nextSingerCycleChange = DateTime.UtcNow.AddSeconds(settings.ConcertSingerCycleSeconds); }
                             }
                             discordStatus = "Presence acknowledged by Discord";
-                            Log.Write("Presence updated: " + state.Details + " / " + state.State + " (" + state.Source + ").");
+
                         }
                         catch (Exception ex) { discordStatus = ex.Message; Log.Write(ex.Message); discord.Dispose(); nextConnect = now.AddSeconds(10); }
                     }
@@ -441,42 +455,22 @@ namespace UmapyonPresence
         {
             string label = paused ? "Paused" : gamePid == 0 ? "Waiting for game" : state.Details + " • " + state.State;
             if (tray != null) tray.Text = ("UmaPresence • " + label).Substring(0, Math.Min(63, ("UmaPresence • " + label).Length));
-            string key = gamePid + "|" + label + "|" + discordStatus + "|" + reader.Status + "|" + concertReader.Status + "|" + lastAcknowledged.Ticks + "|" + lastScreenScan.Ticks + "|" + gameForeground + "|" + DateTime.UtcNow.Ticks / TimeSpan.TicksPerSecond / 10;
-            key += "|" + concertSeekOverlay.Status + "|" + concertSeekOverlay.LastCommand + "|" + concertOverlayRuntime?.SeekReason + "|" + concertOverlayRuntime?.PlaybackStage;
-            if (state.Concert != null) key += "|" + (state.Concert.Paused ? state.Concert.Position.ToString("F2") : (DateTime.UtcNow.Ticks / TimeSpan.TicksPerSecond / 10).ToString());
-            if (key != lastReportedStatus)
+            string summary = Json.Encode(new {
+                gameRunning = gamePid != 0,
+                paused,
+                activity = gamePid == 0 ? "Waiting for game" : state.Kind,
+                discordConnected = discord.IsConnected,
+                discordAcknowledged = lastAcknowledged != DateTime.MinValue,
+                screenDetectionEnabled = settings.ScreenDetection,
+                ocrEnabled = settings.ScreenDetection && settings.OcrDetection
+            });
+            if (summary == lastReportedStatus) return;
+            try
             {
-                lastReportedStatus = key;
-                try
-                {
-                    string paddockDiagnostics = concertReader.RaceDiagnostics;
-                    if (gamePid != 0 && !string.IsNullOrEmpty(paddockDiagnostics) && paddockDiagnostics != lastPaddockDiagnostics && (concertReader.Race == null || concertReader.Race.Preparing))
-                    {
-                        File.WriteAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "race-paddock-diagnostics.json"), Json.Encode(new { gamePid, diagnostics = paddockDiagnostics, race = concertReader.Race, updated = DateTimeOffset.Now.ToString("O") }), new UTF8Encoding(false));
-                        lastPaddockDiagnostics = paddockDiagnostics;
-                    }
-                    File.WriteAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "status.json"), Json.Encode(new {
-                        appPid = ownPid, gamePid, gamePath, paused, activity = label, source = state.Source, discord = discordStatus,
-                        ocr = reader.Status, bridge = concertReader.Status, concertSongId = state.Concert == null ? 0 : state.Concert.MusicId, concertCast = state.Concert == null ? null : state.Concert.CastIds, artwork = concertArtwork.Status,
-                        gameForeground, screenStatus, lastScreenScan = lastScreenScan == DateTime.MinValue ? null : lastScreenScan.ToString("O"), lastScreenText,
-                        concertOverlay = concertSeekOverlay.Status, concertOverlayLastCommand = concertSeekOverlay.LastCommand,
-                        concertOverlayRuntime = concertOverlayRuntime == null ? null : new {
-                            concertOverlayRuntime.State, concertOverlayRuntime.Backend, Capabilities = (ulong)concertOverlayRuntime.Capabilities,
-                            concertOverlayRuntime.PlaybackStage, concertOverlayRuntime.SeekReason, concertOverlayRuntime.SeekStart, concertOverlayRuntime.SeekEnd
-                        },
-                        concertPosition = state.Concert == null ? 0 : state.Concert.Position, concertDuration = state.Concert == null ? 0 : state.Concert.Duration, concertPaused = state.Concert != null && state.Concert.Paused,
-                        concertDresses = state.Concert == null ? null : state.Concert.DressIds,
-                        outfitDiagnostics = concertReader.OutfitDiagnostics,
-                        careerDiagnostics = concertReader.CareerDiagnostics, careerResultRaw = concertReader.CareerResultRaw, career = state.Career, nativeMenu = concertReader.Menu,
-                        raceDiagnostics = concertReader.RaceDiagnostics, race = state.Race,
-                        outfitCatalog = OutfitCatalog.Status, mainPerformerCount = state.Concert == null ? 0 : state.Concert.MainPerformerCount,
-                        discordActivity = discord.LastActivity,
-                        originalConcertCover = state.Concert == null ? null : OriginalConcertCovers.Source(state.Concert.MusicId), originalCoverLookup = OriginalConcertCovers.Status,
-                        lastAcknowledged = lastAcknowledged == DateTime.MinValue ? null : lastAcknowledged.ToString("O"), updated = DateTimeOffset.Now.ToString("O")
-                    }), new UTF8Encoding(false));
-                }
-                catch { }
+                AtomicText.Write(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "status.json"), summary);
+                lastReportedStatus = summary;
             }
+            catch (Exception error) when (error is IOException || error is UnauthorizedAccessException) { }
         }
 
         private string DiagnosticText()
@@ -520,7 +514,7 @@ namespace UmapyonPresence
                         string filename = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "generated-artwork", "concert_" + concert.MusicId + ".png");
                         if (!File.Exists(filename)) throw new IOException(concertArtwork.Status);
                     }, new SettingsActions {
-                        Overview = () => "Game: " + (gamePid == 0 ? "Not running" : "Connected") + "\r\nDiscord: " + discordStatus + "\r\nActivity: " + (gamePid == 0 ? "Waiting for game" : state.Details + " — " + state.State),
+                        Overview = () => "Game: " + (gamePid == 0 ? "Not running" : "Connected") + "\r\nTracked playtime: " + playtime.Label + "\r\nDiscord: " + discordStatus + "\r\nActivity: " + (gamePid == 0 ? "Waiting for game" : state.Details + " — " + state.State),
                         BridgeStatus = () => paused ? "Presence paused" : !settings.ConcertBridge ? "Disabled in settings" : concertReader.Status,
                         Activity = () => mode, SelectActivity = SetActivity, ChooseCharacter = ChooseCharacter,
                         Paused = () => paused, Pause = value => { paused = value; if (pauseItem != null) pauseItem.Checked = value; UpdateStatus(); },
@@ -573,14 +567,13 @@ namespace UmapyonPresence
                 try
                 {
                     var security = new PipeSecurity();
+                    security.AddAccessRule(new PipeAccessRule(new SecurityIdentifier(WellKnownSidType.NetworkSid, null), PipeAccessRights.FullControl, AccessControlType.Deny));
                     security.AddAccessRule(new PipeAccessRule(WindowsIdentity.GetCurrent().User, PipeAccessRights.FullControl, AccessControlType.Allow));
-                    using (var server = new NamedPipeServerStream(Program.ControlPipe, PipeDirection.In, 1, PipeTransmissionMode.Byte, PipeOptions.None, 256, 256, security))
+                    using (var server = new NamedPipeServerStream(Program.ControlPipe, PipeDirection.In, 1, PipeTransmissionMode.Byte, PipeOptions.Asynchronous, 256, 256, security))
                     {
                         lock (controlLock) { if (stopping) return; controlServer = server; }
                         server.WaitForConnection();
-                        string command = "";
-                        int b;
-                        while (command.Length < 16 && (b = server.ReadByte()) >= 0 && b != 10) command += (char)b;
+                        string command = ReadControlCommand(server).GetAwaiter().GetResult();
                         if (!stopping) dispatcher.BeginInvoke((Action)(async () => { if (command == "stop") await Stop(); else if (command == "show") { CreateTray(); ShowStatus(); } else if (command == "settings") { CreateTray(); ShowSettings(); } else if (command == "diagnostics") File.WriteAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"live-diagnostic.txt"),DiagnosticText(),Encoding.UTF8); }));
                     }
                 }
@@ -588,6 +581,33 @@ namespace UmapyonPresence
                 finally { lock (controlLock) controlServer = null; }
             }
         }
+        internal static async Task<string> ReadControlCommand(Stream stream, int timeoutMilliseconds = 2000)
+        {
+            using (var deadline = new CancellationTokenSource())
+            {
+                Task timeout = Task.Delay(timeoutMilliseconds, deadline.Token);
+                var command = new StringBuilder();
+                var buffer = new byte[1];
+                try
+                {
+                    while (command.Length < 16)
+                    {
+                        var read = stream.ReadAsync(buffer, 0, 1);
+                        if (await Task.WhenAny(read, timeout).ConfigureAwait(false) != read)
+                        {
+                            _ = read.ContinueWith(failed => { _ = failed.Exception; }, TaskContinuationOptions.OnlyOnFaulted);
+                            return null;
+                        }
+                        if (await read.ConfigureAwait(false) == 0) return null;
+                        if (buffer[0] == 10) return command.ToString();
+                        command.Append((char)buffer[0]);
+                    }
+                    return null;
+                }
+                finally { deadline.Cancel(); }
+            }
+        }
+
         private async Task Stop()
         {
             if (stopping) return;
@@ -598,6 +618,7 @@ namespace UmapyonPresence
         }
         protected override void ExitThreadCore()
         {
+            playtime.Save();
             stopping = true; timer.Dispose(); discord.Dispose(); concertReader.Dispose();
             lock (controlLock) { if (controlServer != null) controlServer.Dispose(); }
             if (tray != null) { tray.Visible = false; tray.Dispose(); }

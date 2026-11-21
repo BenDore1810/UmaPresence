@@ -91,8 +91,10 @@ namespace UmapyonPresence
                 page.Controls.Add(SettingsUi.Button("Full uninstall…", () => {
                     if (checking) { this.saved("Wait for the current update check or install to finish, then try again."); return; }
                     if (!WelcomeDialog.ConfirmUninstall(this)) return;
+                    bool companionOnly = settings.RequiresFolderConfirmation;
+                    if (companionOnly && MessageBox.Show(this, "The game folder is unknown. Remove only the companion and leave any game integration installed? To remove the integration too, confirm the game folder first.", "Remove companion only?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) != DialogResult.Yes) return;
                     try {
-                        Program.SchedulePortableRemoval(settings);
+                        Program.SchedulePortableRemoval(settings, companionOnly);
                         Application.Exit();
                     } catch (Exception error) { MessageBox.Show(this, error.Message, "Full uninstall", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                 }));
@@ -115,7 +117,20 @@ namespace UmapyonPresence
         private void SaveFolder(string folder)
         {
             if (!GameInstallationDiscovery.Valid(folder)) throw new InvalidOperationException("Choose a valid JP DMM game folder.");
-            string old = settings.GameDirectory; try { settings.GameDirectory = folder; settings.Save(); } catch { settings.GameDirectory = old; throw; }
+            string old = settings.GameDirectory;
+            bool confirm = settings.RequiresFolderConfirmation;
+            try
+            {
+                settings.GameDirectory = folder;
+                settings.RequiresFolderConfirmation = false;
+                settings.Save();
+            }
+            catch
+            {
+                settings.GameDirectory = old;
+                settings.RequiresFolderConfirmation = confirm;
+                throw;
+            }
             checkResult = updateError = null;
             updateOffer = null;
         }
